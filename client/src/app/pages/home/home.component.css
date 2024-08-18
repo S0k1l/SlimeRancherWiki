@@ -1,0 +1,163 @@
+.parallelogram{
+    transform: skewX(-20deg);
+}
+
+.parallelogram>span{
+    transform: skewX(20deg);
+}
+  
+/* ---------- MY CUSTOME TABS ---------- */
+
+.my-custom-tabs .mat-mdc-tab-labels{
+    gap: 10px;
+    padding: 10px;
+}
+
+.my-custom-tabs .mdc-tab-indicator__content {
+    display: none;
+}
+
+.my-custom-tabs .mat-mdc-tab-label-container {
+    border-bottom: 0;
+}
+
+.my-custom-tabs .mdc-tab {
+    min-width: 48px;
+    padding: 0;
+    background: #DB915E;
+    border-radius: 9999px;
+    overflow: hidden;
+    transition: width 0.2s ease-in-out;
+    width: 48px;
+}
+
+.my-custom-tabs .mdc-tab.mdc-tab--active {
+    width: 150px;
+}
+
+.my-custom-tabs .mdc-tab.mdc-tab--active .mdc-tab__text-label{
+    justify-content: flex-start;
+}
+
+.my-custom-tabs .mdc-tab__content{
+    width: 100%;
+}
+
+.my-custom-tabs .mdc-tab__text-label{
+    width: 100%;
+    padding-left: 4px;
+}
+
+.my-custom-tabs .my-span{
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease, visibility 0s 0.3s;
+}
+
+.my-custom-tabs .mdc-tab.mdc-tab--active .my-span{
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+/* ---------- MY CUSTOME TABS CONTENT ---------- */
+
+.my-custom-tabs-content{
+    display: flex !important;
+    flex-direction: row !important;
+}
+
+.my-custom-tabs-content .mat-mdc-tab-labels{
+    flex-direction: column;
+    padding: 20px 0;
+    gap: 0;
+    width: 100px;
+    align-items: flex-end;
+}
+
+.my-custom-tabs-content .mat-mdc-tab-body-wrapper{
+    width: 100%;
+    /* padding: 20px 17px; */
+    border-radius: 20px 0 0 20px;
+    border-left: dashed 2px #405D4F;
+}
+
+.my-custom-tabs-content .mdc-tab__text-label{
+    flex-direction: column;
+}
+
+.my-custom-tabs-content .mdc-tab{
+    height: 70px;
+    width: 85%;
+    background: transparent;
+    border: dashed 2px transparent;
+    border-right: none;
+    border-radius: 10px 0 0 10px;
+}
+
+.my-custom-tabs-content .mdc-tab.mdc-tab--active{
+    width: 100%;
+    border: dashed 2px #405D4F;
+    border-right: none;
+}
+
+.my-custom-tabs-content .mdc-tab__text-label{
+    padding: 0;
+    height: 100%;
+}  
+
+.my-custom-tabs-content .mat-mdc-tab-body-content{
+    padding: 10px 17px;
+    height: 300px;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    flex-wrap: wrap;
+}  
+
+.my-custom-tabs-content-item{
+    width: 100px;
+    height: 132px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    border-radius: 20px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    transition: scale 0.1s ease-in-out;
+
+}
+
+.my-custom-tabs-content-item:hover{
+    scale: 1.1;
+    transition: scale 0.1s ease-in-out;
+}
+
+
+/* ---------- SCROLLBAR ---------- */
+ 
+ /* width */
+ .my-custom-tabs-content .mat-mdc-tab-body-content::-webkit-scrollbar {
+    width: 5px;
+}
+
+/* Track */
+.my-custom-tabs-content .mat-mdc-tab-body-content::-webkit-scrollbar-track {
+    background: lightgray;
+    border-radius: 10px;
+    margin: 10px 0 10px 0;
+
+}
+
+/* Handle */
+.my-custom-tabs-content .mat-mdc-tab-body-content::-webkit-scrollbar-thumb {
+    background: #DC5552; 
+    border-radius: 10px;
+}
+
+
+/* Handle on hover */
+.my-custom-tabs-content .mat-mdc-tab-body-content::-webkit-scrollbar-thumb:active {
+    background: #bd4a48; 
+}
