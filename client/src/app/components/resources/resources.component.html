@@ -1,0 +1,28 @@
+<mat-tab-group class="my-custom-tabs-content p-3" animationDuration="0ms" disableRipple="">
+
+    <mat-tab label="Fruits">
+      <ng-template mat-tab-label>
+        <img class="w-12 h-12" src="fruits/Fruit.webp" alt="404" draggable="false">
+        <span class="w-full text-slate-900 font-medium">Фрукти</span>
+      </ng-template>
+        <app-item-button *ngFor="let item of fruits" [item]="item" routePath="fruit"></app-item-button>
+    </mat-tab>
+  
+    <mat-tab label="Vegetables">
+      <ng-template mat-tab-label>
+        <img class="w-12 h-12" src="veggie/Veggie.webp" alt="404" draggable="false">
+        <span class="w-full text-slate-900 font-medium">Овочі</span>
+      </ng-template>
+        <app-item-button *ngFor="let item of veggie" [item]="item" routePath="veggie"></app-item-button>
+    </mat-tab>
+  
+    <mat-tab label="Meat">
+      <ng-template mat-tab-label>
+        <img class="w-12 h-12" src="meats/Meat.webp" alt="404" draggable="false">
+        <span class="w-full text-slate-900 font-medium">М'ясо</span>
+      </ng-template>
+        <app-item-button *ngFor="let item of meat" [item]="item" routePath="meat"></app-item-button>
+    </mat-tab>
+  
+  </mat-tab-group>
+  

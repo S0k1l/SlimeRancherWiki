@@ -1,0 +1,31 @@
+<mat-tab-group class="my-custom-tabs bg-bone min-w-700px px-5 py-11 rounded-50px w-3/5 gap-3" 
+  mat-stretch-tabs="false" 
+  mat-align-tabs="center" 
+  animationDuration="0ms" 
+  disableRipple="">
+  
+  <mat-tab label="Slimes" [class.mdc-tab--active]="isActive(0)" (click)="setActiveTab(0)">
+    <ng-template mat-tab-label>
+      <img class="w-10 h-10" src="slimes/Pink_Slime.webp" alt="404" draggable="false">
+      <span class="w-full my-span text-white font-semibold pr-4">Слайми</span>
+    </ng-template>
+    <app-slimes></app-slimes>
+  </mat-tab>
+
+  <mat-tab label="Locations" [class.mdc-tab--active]="isActive(1)" (click)="setActiveTab(1)">
+    <ng-template mat-tab-label>
+      <img class="w-10 h-10" src="locations/Map_link_sr1_marker.webp" alt="404" draggable="false">
+      <span class="w-full my-span text-white font-semibold pr-4">Локації</span>
+    </ng-template>
+    <app-locations></app-locations>
+  </mat-tab>
+
+  <mat-tab label="Resources" [class.mdc-tab--active]="isActive(2)" (click)="setActiveTab(2)">
+    <ng-template mat-tab-label>
+      <img class="w-10 h-10" src="veggie/Veggie.webp" alt="404" draggable="false">
+      <span class="w-full my-span text-white font-semibold pr-4">Ресурси</span>
+    </ng-template>
+    <app-resources></app-resources>
+  </mat-tab>
+
+</mat-tab-group>
