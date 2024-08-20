@@ -13,13 +13,5 @@ import { ResourcesComponent } from '../resources/resources.component';
 })
 
 export class TabGroupComponent {
-  activeTabIndex = 0;
 
-  setActiveTab(index: number) {
-    this.activeTabIndex = index;
-  }
-
-  isActive(index: number) {
-    return this.activeTabIndex === index;
-  }
 }

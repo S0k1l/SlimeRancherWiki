@@ -4,7 +4,7 @@
   animationDuration="0ms" 
   disableRipple="">
   
-  <mat-tab label="Slimes" [class.mdc-tab--active]="isActive(0)" (click)="setActiveTab(0)">
+  <mat-tab label="Slimes">
     <ng-template mat-tab-label>
       <img class="w-10 h-10" src="slimes/Pink_Slime.webp" alt="404" draggable="false">
       <span class="w-full my-span text-white font-semibold pr-4">Слайми</span>
@@ -12,7 +12,7 @@
     <app-slimes></app-slimes>
   </mat-tab>
 
-  <mat-tab label="Locations" [class.mdc-tab--active]="isActive(1)" (click)="setActiveTab(1)">
+  <mat-tab label="Locations">
     <ng-template mat-tab-label>
       <img class="w-10 h-10" src="locations/Map_link_sr1_marker.webp" alt="404" draggable="false">
       <span class="w-full my-span text-white font-semibold pr-4">Локації</span>
@@ -20,7 +20,7 @@
     <app-locations></app-locations>
   </mat-tab>
 
-  <mat-tab label="Resources" [class.mdc-tab--active]="isActive(2)" (click)="setActiveTab(2)">
+  <mat-tab label="Resources">
     <ng-template mat-tab-label>
       <img class="w-10 h-10" src="veggie/Veggie.webp" alt="404" draggable="false">
       <span class="w-full my-span text-white font-semibold pr-4">Ресурси</span>

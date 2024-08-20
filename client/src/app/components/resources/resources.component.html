@@ -5,7 +5,7 @@
         <img class="w-12 h-12" src="fruits/Fruit.webp" alt="404" draggable="false">
         <span class="w-full text-slate-900 font-medium">Фрукти</span>
       </ng-template>
-        <app-item-button class="h-fit" *ngFor="let item of fruits" [item]="item" routePath="fruit"></app-item-button>
+        <app-item-button *ngFor="let item of fruits" [item]="item" routePath="fruit"></app-item-button>
     </mat-tab>
   
     <mat-tab label="Vegetables">
