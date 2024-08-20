@@ -108,11 +108,12 @@
 
 .my-custom-tabs-content .mat-mdc-tab-body-content{
     padding: 10px 17px;
-    height: 300px;
+    height: 320px;
     display: flex;
     flex-direction: row;
     gap: 10px;
     flex-wrap: wrap;
+    align-content: flex-start;
 }  
 
 .my-custom-tabs-content-item{
