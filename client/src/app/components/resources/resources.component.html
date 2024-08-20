@@ -5,7 +5,7 @@
         <img class="w-12 h-12" src="fruits/Fruit.webp" alt="404" draggable="false">
         <span class="w-full text-slate-900 font-medium">Фрукти</span>
       </ng-template>
-        <app-item-button *ngFor="let item of fruits" [item]="item" routePath="fruit"></app-item-button>
+        <app-item-button class="h-fit" *ngFor="let item of fruits" [item]="item" routePath="fruit"></app-item-button>
     </mat-tab>
   
     <mat-tab label="Vegetables">
@@ -22,6 +22,14 @@
         <span class="w-full text-slate-900 font-medium">М'ясо</span>
       </ng-template>
         <app-item-button *ngFor="let item of meat" [item]="item" routePath="meat"></app-item-button>
+    </mat-tab>
+
+    <mat-tab label="Plorts">
+      <ng-template mat-tab-label>
+        <img class="w-12 h-12" src="plorts/Plort.webp" alt="404" draggable="false">
+        <span class="w-full text-slate-900 font-medium">Плорти</span>
+      </ng-template>
+        <app-item-button *ngFor="let item of plorts" [item]="item" routePath="plort"></app-item-button>
     </mat-tab>
   
   </mat-tab-group>
