@@ -7,6 +7,7 @@ body{
     background-position: center;
     background-repeat: no-repeat;
     background-size:cover;
+    background-attachment: fixed;
 }
 
 .bg-persian-orange{
@@ -19,6 +20,10 @@ body{
 
 .bg-bone{
     background-color: #E5DBC3;
+}
+
+.bg-jelly-bean{
+    background-color: #DC5552;
 }
 
 .rounded-50px{
