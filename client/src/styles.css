@@ -66,3 +66,11 @@ body{
 .m-1\/20{
     margin: 5%;
 }
+
+.min-w-510px{
+    min-width: 510px;
+}
+
+.min-h-500px{
+    min-height: 500px;
+}
