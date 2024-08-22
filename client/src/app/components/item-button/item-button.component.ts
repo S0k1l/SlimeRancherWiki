@@ -16,5 +16,5 @@ interface Items {
 })
 export class ItemButtonComponent {
   @Input() item!: Items;
-  @Input() routePath!: string;
+  @Input() routePath!: string | any[] | null | undefined;
 }
