@@ -3,6 +3,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { SlimeComponent } from './pages/slime/slime.component';
 import { LocationComponent } from './pages/location/location.component';
 import { FoodComponent } from './pages/food/food.component';
+import { ToyComponent } from './pages/toy/toy.component';
 
 export const routes: Routes = [
     {
@@ -29,6 +30,8 @@ export const routes: Routes = [
         path: 'meat/:id',
         component: FoodComponent
     },
-
-
+    {
+        path: 'toy/:id',
+        component: ToyComponent
+    },
 ];
