@@ -87,7 +87,7 @@
           </div>
 
           <div class="grid grid-cols-4 gap-3 w-2/3 min-w-510px">
-            <app-info-block header="Дієта" imgUrl="{{slime.diet?.imgUrl}}" name="{{slime.diet?.name}}" link="{{['/diets']}}"></app-info-block>
+            <app-info-block header="Дієта" imgUrl="{{slime.diet?.imgUrl}}" name="{{slime.diet?.name}}" [link]="['/diets']"></app-info-block>
             
             <!-- <div class="flex flex-col items-center justify-start rounded-3xl border-dashed border-2 border-slate-600 p-3 gap-3">
               <div class="w-full bg-persian-orange h-8 rounded-lg items-center flex text-center">
@@ -105,7 +105,7 @@
               }
             </div> -->
             
-            <app-info-block header="Юлюблене" imgUrl="{{slime.favFood?.imgUrl}}" name="{{slime.favFood?.name}}" link="{{['/food', slime.favFood?.id]}}"></app-info-block>
+            <app-info-block header="Юлюблене" imgUrl="{{slime.favFood?.imgUrl}}" name="{{slime.favFood?.name}}" [link]="['/food', slime.favFood?.id]"></app-info-block>
 
             <!-- <div class="flex flex-col items-center justify-start rounded-3xl border-dashed border-2 border-slate-600 p-3 gap-3">
               <div class="w-full bg-persian-orange h-8 rounded-lg items-center flex text-center">
@@ -123,7 +123,7 @@
               }
             </div> -->
            
-            <app-info-block header="Іграшка" imgUrl="{{slime.toys?.imgUrl}}" name="{{slime.toys?.name}}" link="{{['/toy', slime.toys?.id]}}"></app-info-block>
+            <app-info-block header="Іграшка" imgUrl="{{slime.toys?.imgUrl}}" name="{{slime.toys?.name}}" [link]="['/toy', slime.toys?.id]"></app-info-block>
 
             <!-- <div class="flex flex-col items-center justify-start rounded-3xl border-dashed border-2 border-slate-600 p-3 gap-3">
               <div class="w-full bg-persian-orange h-8 rounded-lg items-center flex text-center">
@@ -141,7 +141,7 @@
               }
             </div> -->
             
-            <app-info-block header="Плорт" imgUrl="{{slime.plort?.imgUrl}}" name="{{slime.plort?.name}}" link="{{['/plort', slime.plort?.id]}}"></app-info-block>
+            <app-info-block header="Плорт" imgUrl="{{slime.plort?.imgUrl}}" name="{{slime.plort?.name}}" [link]="['/plort', slime.plort?.id]"></app-info-block>
 
             <!-- <div class="flex flex-col items-center justify-start rounded-3xl border-dashed border-2 border-slate-600 p-3 gap-3">
               <div class="w-full bg-persian-orange h-8 rounded-lg items-center flex text-center">
