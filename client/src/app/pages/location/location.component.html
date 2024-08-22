@@ -10,9 +10,9 @@
             </div>
   
             <div class="grid grid-cols-3 gap-3 w-2/3 min-w-510px">
-                <app-info-block-big header="Овочі" [array]="location.veggie"></app-info-block-big>
-                <app-info-block-big header="Фрукти" [array]="location.fruits"></app-info-block-big>
-                <app-info-block-big header="М'ясо" [array]="location.meat"></app-info-block-big>
+                <app-info-block-big header="Овочі" [array]="location.veggie" path="/veggie"></app-info-block-big>
+                <app-info-block-big header="Фрукти" [array]="location.fruits" path="/fruit"></app-info-block-big>
+                <app-info-block-big header="М'ясо" [array]="location.meat" path="/meat"></app-info-block-big>
                 <app-info-block-big class="col-span-3" header="Слайми" [array]="location.slimes" path="/slime"></app-info-block-big>
             </div>
     </div>
