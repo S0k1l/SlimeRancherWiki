@@ -4,6 +4,7 @@ import { SlimeComponent } from './pages/slime/slime.component';
 import { LocationComponent } from './pages/location/location.component';
 import { FoodComponent } from './pages/food/food.component';
 import { ToyComponent } from './pages/toy/toy.component';
+import { PlortsComponent } from './pages/plorts/plorts.component';
 
 export const routes: Routes = [
     {
@@ -34,4 +35,8 @@ export const routes: Routes = [
         path: 'toy/:id',
         component: ToyComponent
     },
+    {
+        path: 'plorts',
+        component: PlortsComponent
+    },    
 ];

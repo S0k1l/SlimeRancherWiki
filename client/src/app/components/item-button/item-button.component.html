@@ -1,4 +1,4 @@
-<button [routerLink]="routePath" class="my-custom-tabs-content-item bg-fawn">
+<button [routerLink]="routePath" [fragment]="fragment" class="my-custom-tabs-content-item bg-fawn">
     <img class="w-16 h-16" [src]="item.imgUrl" alt="404" draggable="false">
     <span class="w-full p-1/10 h-8 text-slate-800 font-medium leading-4 text-sm flex items-center justify-center">
       {{item.name}}

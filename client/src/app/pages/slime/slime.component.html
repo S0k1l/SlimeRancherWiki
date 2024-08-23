@@ -144,7 +144,7 @@
               }
             </div> -->
             
-            <app-info-block header="Плорт" imgUrl="{{slime.plort?.imgUrl}}" name="{{slime.plort?.name}}" [link]="['/plort', slime.plort?.id]"></app-info-block>
+            <app-info-block header="Плорт" imgUrl="{{slime.plort?.imgUrl}}" name="{{slime.plort?.name}}" [link]="['/plorts']" [fragment]="slime.plort?.id"></app-info-block>
 
             <!-- <div class="flex flex-col items-center justify-start rounded-3xl border-dashed border-2 border-slate-600 p-3 gap-3">
               <div class="w-full bg-persian-orange h-8 rounded-lg items-center flex text-center">

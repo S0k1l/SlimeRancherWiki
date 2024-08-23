@@ -1,0 +1,35 @@
+th{
+    font-weight: 600;
+    font-size: 1.25rem /* 20px */;
+    line-height: 1.75rem /* 28px */;
+    text-decoration: underline;
+    --tw-text-opacity: 1;
+    color: rgb(51 65 85 / var(--tw-text-opacity)) /* #334155 */;
+    border-bottom:dashed 2px #475569;
+}
+
+td{
+    border-bottom:dashed 2px #475569;
+}
+
+.mat-mdc-header-cell{
+    margin-right: 10px;
+}
+
+
+.mat-mdc-table{
+    background-color: transparent;
+}
+
+.mat-column-avgPrice, .mat-column-minPrice, .mat-column-maxPrice{
+    width: 160px;
+}
+
+td{
+    padding: 16px;
+}
+
+.table tr:last-child th,
+.table tr:last-child td {
+    border: none;
+}

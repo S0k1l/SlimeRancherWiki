@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+    scroll-behavior: smooth;
+}
+
 body{
     background-image: url('../public/зображення_2024-08-10_013553888.png');
     background-position: center;

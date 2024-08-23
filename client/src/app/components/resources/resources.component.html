@@ -29,7 +29,7 @@
         <img class="w-12 h-12" src="plorts/Plort.webp" alt="404" draggable="false">
         <span class="w-full text-slate-900 font-medium">Плорти</span>
       </ng-template>
-        <app-item-button *ngFor="let item of plorts" [item]="item" routePath="plort"></app-item-button>
+        <app-item-button *ngFor="let item of plorts" [item]="item" routePath="/plorts" fragment="{{item.id}}"></app-item-button>
     </mat-tab>
   
   </mat-tab-group>
