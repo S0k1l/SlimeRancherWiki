@@ -50,8 +50,8 @@ export class SlimeComponent {
     {id: '9', name: 'Слаймуляція', imgUrl: 'locations/Slimeulation.webp'},
     {id: '10', name: 'Слаймове Море', imgUrl: 'locations/The_Slime_Sea.webp'},
    ],
-   diet: {name : 'Всеядний', imgUrl: 'diets/All.webp'},
-   favFood: null,
+   diet: {name : 'Всеїдний', imgUrl: 'diets/All.webp'},
+   favFood: {id: '1', name: 'Погофрукт', imgUrl: 'diets/fruits/Pogofruit.webp'},
    plort: {id: '1', name: 'Рожевий плорт', imgUrl: 'plorts/PlortPINK.webp'},
  }
 }
