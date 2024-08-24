@@ -1,4 +1,4 @@
-import { Component, ViewChild, OnInit } from '@angular/core';
+import { Component, ViewChild, OnInit, Renderer2 } from '@angular/core';
 import { MatSort, MatSortModule } from '@angular/material/sort';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 import { MatTooltipModule } from '@angular/material/tooltip';
@@ -28,7 +28,7 @@ interface Plorts{
 })
 export class PlortsComponent implements OnInit  {
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private renderer: Renderer2) { }
 
   ngOnInit(): void {
     this.router.events.subscribe(event => {
@@ -36,8 +36,14 @@ export class PlortsComponent implements OnInit  {
         const fragment = this.router.url.split('#')[1];
         if (fragment) {
           setTimeout(() => {
-            document.getElementById(fragment)?.scrollIntoView({ behavior: 'smooth' });
-          }, 100);  // Adjust the timeout if needed
+            const el = document.getElementById(fragment);
+            this.renderer.addClass(el,'highlighted');
+            el?.scrollIntoView({ behavior: 'smooth', block: 'center', inline: 'center' });
+
+            setTimeout(() => {
+              this.renderer.removeClass(el,'highlighted');
+            }, 1200);
+          }, 100);
         }
       }
     });
@@ -56,7 +62,7 @@ export class PlortsComponent implements OnInit  {
     {id: '9', name: 'Смугастий плорт', imgUrl: 'plorts/PlortTABBY.webp', minPrice: '500', maxPrice: '550', avgPrice: '525', slime: {id: '3', name: 'Смугастий слайм', imgUrl: 'slimes/Tabby_Slime.webp'},},
     {id: '10', name: 'Рожевий плорт', imgUrl: 'plorts/PlortPINK.webp', minPrice: '300' , maxPrice: '350', avgPrice: '325', slime: {id: '1', name: 'Рожевий слайм', imgUrl: 'slimes/Pink_Slime.webp'},},
     {id: '11', name: 'Кам\'яний плорт', imgUrl: 'plorts/PlortROCK.webp', minPrice: '400', maxPrice: '450', avgPrice: '425', slime: {id: '2', name: 'Кам\'яний слайм', imgUrl: 'slimes/Rock_Slime.webp'},},
-    {id: '12', name: 'Смугастий плорт', imgUrl: 'plorts/PlortTABBY.webp', minPrice: '500', maxPrice: '550', avgPrice: '525', slime: {id: '3', name: 'Смугастий слайм', imgUrl: 'slimes/Tabby_Slime.webp'},},
+    {id: '12', name: 'Смугастий плорт', imgUrl: 'plorts/PlortFIRE.webp', minPrice: '500', maxPrice: '550', avgPrice: '525', slime: {id: '3', name: 'Смугастий слайм', imgUrl: 'slimes/Tabby_Slime.webp'},},
     {id: '13', name: 'Рожевий плорт', imgUrl: 'plorts/PlortPINK.webp', minPrice: '300' , maxPrice: '350', avgPrice: '325', slime: {id: '1', name: 'Рожевий слайм', imgUrl: 'slimes/Pink_Slime.webp'},},
     {id: '14', name: 'Кам\'яний плорт', imgUrl: 'plorts/PlortROCK.webp', minPrice: '400', maxPrice: '450', avgPrice: '425', slime: {id: '2', name: 'Кам\'яний слайм', imgUrl: 'slimes/Rock_Slime.webp'},},
     {id: '15', name: 'Смугастий плорт', imgUrl: 'plorts/PlortTABBY.webp', minPrice: '500', maxPrice: '550', avgPrice: '525', slime: {id: '3', name: 'Смугастий слайм', imgUrl: 'slimes/Tabby_Slime.webp'},},

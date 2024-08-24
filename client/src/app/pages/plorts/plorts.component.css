@@ -33,3 +33,12 @@ td{
 .table tr:last-child td {
     border: none;
 }
+
+.highlighted {
+    background:  #b79c8a;
+}
+
+img{
+    border-radius: 20px;
+    transition: 0.3s ease;
+}
