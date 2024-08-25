@@ -42,3 +42,20 @@ img{
     border-radius: 20px;
     transition: 0.3s ease;
 }
+
+
+/* To round the entire row */
+.mat-mdc-row {
+    transition: 0.5s ease;
+}
+
+/* Add border-radius to the first and last cells in the row */
+.mat-mdc-row td:first-child {
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+.mat-mdc-row td:last-child {
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}

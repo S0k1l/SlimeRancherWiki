@@ -42,7 +42,7 @@ export class PlortsComponent implements OnInit  {
 
             setTimeout(() => {
               this.renderer.removeClass(el,'highlighted');
-            }, 1200);
+            }, 1000);
           }, 100);
         }
       }
