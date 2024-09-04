@@ -1,7 +1,7 @@
-import { CommonModule } from '@angular/common';
+
 import { Component } from '@angular/core';
-import { MatTooltipModule } from '@angular/material/tooltip';
-import { RouterLink } from '@angular/router';
+import { InfoBlockDietsComponent } from '../../components/info-block-diets/info-block-diets.component';
+
 
 interface Items {
   id: string,
@@ -18,7 +18,7 @@ interface Diet {
 @Component({
   selector: 'app-diets',
   standalone: true,
-  imports: [CommonModule, MatTooltipModule, RouterLink],
+  imports: [InfoBlockDietsComponent],
   templateUrl: './diets.component.html',
   styleUrl: './diets.component.css'
 })

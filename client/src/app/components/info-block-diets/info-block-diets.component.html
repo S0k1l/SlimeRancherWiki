@@ -1,0 +1,10 @@
+<div class="flex h-full flex-row items-center w-full justify-start p-1 gap-3">
+    <div class="bg-fawn rounded-3xl flex justify-center items-center w-1/5 p-2">
+        <img src="{{diet.imgUrl}}" matTooltip="{{diet.name}}" alt="">
+    </div>
+    <div class="w-4/5 h-full rounded-3xl  border-dashed border-2 flex flex-row gap-1 p-3 items-center border-slate-600 flex-wrap">
+        <button class="p-1 rounded-3xl food" *ngFor="let item of diet.food">
+            <img width="100" height="100" src="{{item.imgUrl}}" matTooltip="{{item.name}}" alt="" [routerLink]="[link, item.id]">
+        </button>
+    </div>
+</div>

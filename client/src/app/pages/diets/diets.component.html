@@ -5,38 +5,9 @@
         </div>
         <div class="bg-bone min-w-700px px-5 py-11 rounded-50px w-3/4 flex flex-col gap-3">
 
-            <div class="flex flex-row items-center w-full justify-start p-1 gap-3">
-                <div class="bg-fawn rounded-3xl flex justify-center items-center w-1/5">
-                    <img src="{{fruit.imgUrl}}" matTooltip="{{fruit.name}}" alt="">
-                </div>
-                <div class="w-4/5 rounded-3xl h-full border-dashed border-2 flex flex-row gap-1 p-3 items-center border-slate-600 flex-wrap">
-                    <button class="p-1 rounded-3xl food" *ngFor="let item of fruit.food">
-                        <img width="100" height="100" src="{{item.imgUrl}}" matTooltip="{{item.name}}" alt="" [routerLink]="['/fruit', item.id]">
-                    </button>
-                </div>
-            </div>
-
-            <div class="flex flex-row items-center w-full justify-start p-1 gap-3">
-                <div name="diet" class="bg-fawn rounded-3xl flex justify-center items-center w-1/5">
-                    <img src="{{veggie.imgUrl}}" matTooltip="{{veggie.name}}" alt="">
-                </div>
-                <div name="food" class="w-4/5 rounded-3xl h-full border-dashed border-2 flex flex-row gap-1 p-3 items-center border-slate-600 flex-wrap">
-                    <button class="p-1 rounded-3xl food" *ngFor="let item of veggie.food">
-                        <img width="100" height="100" src="{{item.imgUrl}}" matTooltip="{{item.name}}" alt="" [routerLink]="['/veggie', item.id]">
-                    </button>
-                </div>
-            </div>
-
-            <div class="flex flex-row items-center w-full justify-start p-1 gap-3">
-                <div class="bg-fawn rounded-3xl flex justify-center items-center w-1/5">
-                    <img src="{{meat.imgUrl}}" matTooltip="{{meat.name}}" alt="">
-                </div>
-                <div class="w-4/5 rounded-3xl h-full border-dashed border-2 flex flex-row gap-1 p-3 items-center border-slate-600 flex-wrap">
-                    <button class="p-1 rounded-3xl food" *ngFor="let item of meat.food">
-                        <img width="100" height="100" src="{{item.imgUrl}}" matTooltip="{{item.name}}" alt="" [routerLink]="['/meat', item.id]">
-                    </button>
-                </div>
-            </div>
+            <app-info-block-diets [diet]="fruit" link="/fruit"></app-info-block-diets>
+            <app-info-block-diets [diet]="veggie" link="/veggie"></app-info-block-diets>
+            <app-info-block-diets [diet]="meat" link="/meat"></app-info-block-diets>
 
         </div>
     </div>
