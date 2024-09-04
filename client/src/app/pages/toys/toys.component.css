@@ -63,3 +63,11 @@ td{
     border-top-right-radius: 20px;
     border-bottom-right-radius: 20px;
 }
+
+button{
+    transition: 0.3s ease;
+}
+
+button:hover{
+    scale: 1.1;
+}
