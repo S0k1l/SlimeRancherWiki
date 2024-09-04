@@ -21,7 +21,9 @@
                         Слайм
                     </th>
                     <td mat-cell *matCellDef="let element">
-                        <img [routerLink]="['/slime', element.slime.id]" width="100" height="100" matTooltip="{{element.slime.name}}" src="{{element.slime.imgUrl}}" alt="">
+                        <button [routerLink]="['/slime', element.slime.id]" matTooltip="{{element.slime.name}}">
+                            <img width="100" height="100" src="{{element.slime.imgUrl}}" alt="">
+                        </button>
                     </td>
                 </ng-container>
 
