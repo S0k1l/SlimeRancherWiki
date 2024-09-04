@@ -3,8 +3,8 @@
       <span class="text-white w-full font-semibold">{{header}}</span>
     </div>
     <div class="flex flex-row flex-wrap justify-center items-start gap-1">
-      <img *ngFor="let item of array" 
-      [routerLink]="[path, item.id]" matTooltip="{{item.name}}"
-      width="50" height="50" src="{{item.imgUrl}}" alt="">
+      <button *ngFor="let item of array" class="rounded-xl p-1" matTooltip="{{item.name}}" [routerLink]="[path, item.id]">
+        <img width="50" height="50" src="{{item.imgUrl}}" alt="">
+      </button>
     </div>
   </div>
