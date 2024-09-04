@@ -5,6 +5,7 @@ import { LocationComponent } from './pages/location/location.component';
 import { FoodComponent } from './pages/food/food.component';
 import { PlortsComponent } from './pages/plorts/plorts.component';
 import { ToysComponent } from './pages/toys/toys.component';
+import { DietsComponent } from './pages/diets/diets.component';
 
 export const routes: Routes = [
     {
@@ -38,5 +39,9 @@ export const routes: Routes = [
     {
         path: 'toys',
         component: ToysComponent
+    },   
+    {
+        path: 'diets',
+        component: DietsComponent
     },   
 ];

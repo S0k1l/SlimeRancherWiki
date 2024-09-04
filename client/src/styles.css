@@ -42,6 +42,10 @@ body{
     min-width: 750px;
 }
 
+.min-h-1250px{
+    min-height: 1250px;
+}
+
 
 .bg-aero-blue-t-90{
     background-color: rgba(195, 253, 229, 0.9);

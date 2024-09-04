@@ -1,0 +1,7 @@
+.food{
+    transition: 0.3s ease;
+}
+
+.food:hover{
+    background:  rgba(218, 177, 120, 0.5);
+}
