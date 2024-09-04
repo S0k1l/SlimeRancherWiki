@@ -4,7 +4,7 @@
         <img class="w-12 h-12" src="toys/Slime_Toys.webp" alt="404" draggable="false">
         <span class="w-full text-slate-800 font-medium">Іграшки</span>
       </ng-template>
-        <app-item-button *ngFor="let item of toys" [item]="item" [routePath]="['/toy',item.id]"></app-item-button>
+        <app-item-button *ngFor="let item of toys" [item]="item" [routePath]="['/toys']" [fragment]="item.id"></app-item-button>
     </mat-tab>
   </mat-tab-group>
   

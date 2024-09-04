@@ -1,0 +1,45 @@
+<div class="flex h-full min-h-750px justify-center items-center">
+    <div class="h-full bg-aero-blue-t-90 w-11/12 max-w-7xl min-w-750px flex  items-center flex-col py-16">
+        <div class="inline-flex h-10 rounded-md items-center translate-y-5 px-8 -skew-x-12 bg-persian-orange">
+            <span class="skew-x-12 text-white text-xl font-semibold">ІГРАШКИ</span>
+        </div>
+        <div class="bg-bone px-5 py-11 rounded-50px w-3/4 flex flex-row gap-3">
+
+            <table mat-table [dataSource]="toys" matSort>
+
+                <ng-container matColumnDef="toy">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> 
+                        Іграшка 
+                    </th>
+                    <td mat-cell *matCellDef="let element"> 
+                        <img class="my-img" width="100" height="100" matTooltip="{{element.name}}" src="{{element.imgUrl}}" alt="">
+                    </td>
+                </ng-container>
+
+                <ng-container matColumnDef="slime">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header>
+                        Слайм
+                    </th>
+                    <td mat-cell *matCellDef="let element">
+                        <img class="my-img" [routerLink]="['/slime', element.slime.id]" width="100" height="100" matTooltip="{{element.slime.name}}" src="{{element.slime.imgUrl}}" alt="">
+                    </td>
+                </ng-container>
+
+                <ng-container matColumnDef="price">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header>
+                        Ціна 
+                    </th>
+                    <td mat-cell *matCellDef="let element">
+                        <div class="h-3/4 flex flex-row items-center gap-2">
+                            <span class="font-semibold text-xl text-slate-700">{{element.price}}</span>
+                            <img width="30" height="30" src="Newbucks.webp" alt="">
+                            </div>
+                    </td>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row id="{{row.id}}" *matRowDef="let row; columns: displayedColumns;"></tr>
+            </table>
+        </div>
+    </div>
+</div>

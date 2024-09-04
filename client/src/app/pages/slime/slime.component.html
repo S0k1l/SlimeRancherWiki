@@ -126,7 +126,7 @@
               }
             </div> -->
            
-            <app-info-block header="Іграшка" imgUrl="{{slime.toys?.imgUrl}}" name="{{slime.toys?.name}}" [link]="['/toy', slime.toys?.id]"></app-info-block>
+            <app-info-block header="Іграшка" imgUrl="{{slime.toys?.imgUrl}}" name="{{slime.toys?.name}}" [link]="['/toys']" [fragment]="slime.toys?.id"></app-info-block>
 
             <!-- <div class="flex flex-col items-center justify-start rounded-3xl border-dashed border-2 border-slate-600 p-3 gap-3">
               <div class="w-full bg-persian-orange h-8 rounded-lg items-center flex text-center">

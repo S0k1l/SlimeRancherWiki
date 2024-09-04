@@ -3,8 +3,8 @@ import { HomeComponent } from './pages/home/home.component';
 import { SlimeComponent } from './pages/slime/slime.component';
 import { LocationComponent } from './pages/location/location.component';
 import { FoodComponent } from './pages/food/food.component';
-import { ToyComponent } from './pages/toy/toy.component';
 import { PlortsComponent } from './pages/plorts/plorts.component';
+import { ToysComponent } from './pages/toys/toys.component';
 
 export const routes: Routes = [
     {
@@ -32,11 +32,11 @@ export const routes: Routes = [
         component: FoodComponent
     },
     {
-        path: 'toy/:id',
-        component: ToyComponent
-    },
-    {
         path: 'plorts',
         component: PlortsComponent
     },    
+    {
+        path: 'toys',
+        component: ToysComponent
+    },   
 ];
