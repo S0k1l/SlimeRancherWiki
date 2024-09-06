@@ -10,9 +10,6 @@ namespace SlimeRancherWikiAPI.Models
         public string Name { get; set; }
         public string ImgUrl { get; set; }
         public int Price { get; set; }
-        public string SlimeId { get; set; }
-
-        [ForeignKey("SlimeId")]
-        public Slime Slime { get; set; }
+        public Slime? Slime { get; set; }
     }
 }

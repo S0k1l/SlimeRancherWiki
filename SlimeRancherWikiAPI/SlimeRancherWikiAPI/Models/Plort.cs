@@ -12,9 +12,6 @@ namespace SlimeRancherWikiAPI.Models
         public int MinPrice { get; set; }
         public int AvgPrice { get; set; }
         public int MaxPrice { get; set; }
-        public string SlimeId { get; set; }
-
-        [ForeignKey("SlimeId")]
-        public Slime Slime { get; set; }
+        public Slime? Slime { get; set; }
     }
 }

@@ -71,20 +71,20 @@ namespace SlimeRancherWikiAPI.Data
 
             //One-to-One relationships
 
-            modelBuilder.Entity<Slime>()
-                .HasOne(s => s.FavFood)
-                .WithOne(f => f.Slime)
-                .HasForeignKey<Food>(f => f.SlimeId);
+            modelBuilder.Entity<Food>()
+                .HasOne(f => f.Slime)
+                .WithOne(s => s.FavFood)
+                .HasForeignKey<Slime>(s => s.FavFoodId);
 
-            modelBuilder.Entity<Slime>()
-                .HasOne(s => s.Toy)
-                .WithOne(t => t.Slime)
-                .HasForeignKey<Toy>(t => t.SlimeId);
+            modelBuilder.Entity<Toy>()
+                .HasOne(t => t.Slime)
+                .WithOne(s => s.Toy)
+                .HasForeignKey<Slime>(s => s.ToyId);
 
-            modelBuilder.Entity<Slime>()
-                .HasOne(s => s.Plort)
-                .WithOne(p => p.Slime)
-                .HasForeignKey<Plort>(p => p.SlimeId);
+            modelBuilder.Entity<Plort>()
+                .HasOne(p => p.Slime)
+                .WithOne(s => s.Plort)
+                .HasForeignKey<Slime>(s => s.PlortId);
 
             base.OnModelCreating(modelBuilder);
         }
