@@ -21,7 +21,7 @@ namespace SlimeRancherWikiAPI.Data
                     Diet omnivorous = new Diet { Name = "Всеїдний", ImgUrl = "diets/All.webp", };
 
                     await context.AddRangeAsync(fruit, veggie, meat, omnivorous);
-                    
+
 
                     /*==-- LOACTIONS --==*/
 
@@ -45,10 +45,7 @@ namespace SlimeRancherWikiAPI.Data
                     {
                         Name = "Погофрукт",
                         ImgUrl = "diets/fruits/Pogofruit.webp",
-                        DietFood = new List<DietFood>
-                        {
-                            new DietFood { Diet = fruit, DietId = fruit.Id },
-                        },
+                        Diet = fruit,
                         FoodLocation = new List<FoodLocation>
                         {
                             new FoodLocation{ Location = theDryReef, LocationId = theDryReef.Id, },
@@ -64,10 +61,7 @@ namespace SlimeRancherWikiAPI.Data
                     {
                         Name = "Кубниця",
                         ImgUrl = "diets/fruits/Cuberry.webp",
-                        DietFood = new List<DietFood>
-                        {
-                            new DietFood { Diet = fruit, DietId = fruit.Id },
-                        },
+                        Diet = fruit,
                         FoodLocation = new List<FoodLocation>
                         {
                             new FoodLocation{ Location = theDryReef, LocationId = theDryReef.Id, },
@@ -82,10 +76,7 @@ namespace SlimeRancherWikiAPI.Data
                     {
                         Name = "М'ятне манго",
                         ImgUrl = "diets/fruits/Mint_Mango.webp",
-                        DietFood = new List<DietFood>
-                        {
-                            new DietFood { Diet = fruit, DietId = fruit.Id },
-                        },
+                        Diet = fruit,
                         FoodLocation = new List<FoodLocation>
                         {
                             new FoodLocation{ Location = theMossBlanket, LocationId = theMossBlanket.Id, },
@@ -96,10 +87,7 @@ namespace SlimeRancherWikiAPI.Data
                     {
                         Name = "Фазовий лимон",
                         ImgUrl = "diets/fruits/Phase_Lemon.webp",
-                        DietFood = new List<DietFood>
-                        {
-                            new DietFood { Diet = fruit, DietId = fruit.Id },
-                        },
+                        Diet = fruit,
                         FoodLocation = new List<FoodLocation>
                         {
                             new FoodLocation{ Location = theAncientRuins, LocationId = theAncientRuins.Id, },
@@ -110,10 +98,7 @@ namespace SlimeRancherWikiAPI.Data
                     {
                         Name = "Колюча груша",
                         ImgUrl = "diets/fruits/Prickle_Pear.webp",
-                        DietFood = new List<DietFood>
-                        {
-                            new DietFood { Diet = fruit, DietId = fruit.Id },
-                        },
+                        Diet = fruit,
                         FoodLocation = new List<FoodLocation>
                         {
                             new FoodLocation{ Location = theGlassDesert, LocationId = theGlassDesert.Id, },
@@ -124,10 +109,7 @@ namespace SlimeRancherWikiAPI.Data
                     {
                         Name = "Кукадоба",
                         ImgUrl = "diets/fruits/Kookadoba.webp",
-                        DietFood = new List<DietFood>
-                        {
-                            new DietFood { Diet = fruit, DietId = fruit.Id },
-                        },
+                        Diet = fruit,
                         FoodLocation = new List<FoodLocation>
                         {
                             new FoodLocation{ Location = theWilds, LocationId = theWilds.Id, },
@@ -143,10 +125,7 @@ namespace SlimeRancherWikiAPI.Data
                     {
                         Name = "Морква",
                         ImgUrl = "diets/veggie/Carrot.webp",
-                        DietFood = new List<DietFood>
-                        {
-                            new DietFood { Diet = veggie, DietId = veggie.Id },
-                        },
+                        Diet = veggie,
                         FoodLocation = new List<FoodLocation>
                         {
                             new FoodLocation{ Location = theDryReef, LocationId = theDryReef.Id, },
@@ -162,10 +141,7 @@ namespace SlimeRancherWikiAPI.Data
                     {
                         Name = "Ока-ока",
                         ImgUrl = "diets/veggie/Oca_Oca.webp",
-                        DietFood = new List<DietFood>
-                        {
-                            new DietFood { Diet = veggie, DietId = veggie.Id },
-                        },
+                        Diet = veggie,
                         FoodLocation = new List<FoodLocation>
                         {
                             new FoodLocation{ Location = theIndigoQuarry, LocationId = theIndigoQuarry.Id, },
@@ -176,10 +152,7 @@ namespace SlimeRancherWikiAPI.Data
                     {
                         Name = "Серцебуряк",
                         ImgUrl = "diets/veggie/Heart_Beet.webp",
-                        DietFood = new List<DietFood>
-                        {
-                            new DietFood { Diet = veggie, DietId = veggie.Id },
-                        },
+                        Diet = veggie,
                         FoodLocation = new List<FoodLocation>
                         {
                             new FoodLocation{ Location = theDryReef, LocationId = theDryReef.Id, },
@@ -194,10 +167,7 @@ namespace SlimeRancherWikiAPI.Data
                     {
                         Name = "Срібний пастернак",
                         ImgUrl = "diets/veggie/Silver_Parsnip.webp",
-                        DietFood = new List<DietFood>
-                        {
-                            new DietFood { Diet = veggie, DietId = veggie.Id },
-                        },
+                        Diet = veggie,
                         FoodLocation = new List<FoodLocation>
                         {
                             new FoodLocation{ Location = theGlassDesert, LocationId = theGlassDesert.Id, },
@@ -208,10 +178,7 @@ namespace SlimeRancherWikiAPI.Data
                     {
                         Name = "Дивна цибуля",
                         ImgUrl = "diets/veggie/Odd_Onion.webp",
-                        DietFood = new List<DietFood>
-                        {
-                            new DietFood { Diet = veggie, DietId = veggie.Id },
-                        },
+                        Diet = veggie,
                         FoodLocation = new List<FoodLocation>
                         {
                             new FoodLocation{ Location = theIndigoQuarry, LocationId = theIndigoQuarry.Id, },
@@ -222,10 +189,7 @@ namespace SlimeRancherWikiAPI.Data
                     {
                         Name = "Позолочений імбир",
                         ImgUrl = "diets/veggie/Gilded_Ginger.webp",
-                        DietFood = new List<DietFood>
-                        {
-                            new DietFood { Diet = veggie, DietId = veggie.Id },
-                        },
+                        Diet = veggie,
                         FoodLocation = new List<FoodLocation>
                         {
                             new FoodLocation{ Location = theGlassDesert, LocationId = theGlassDesert.Id, },
@@ -241,10 +205,7 @@ namespace SlimeRancherWikiAPI.Data
                     {
                         Name = "Курчатко",
                         ImgUrl = "diets/meats/Chickadoo.webp",
-                        DietFood = new List<DietFood>
-                        {
-                            new DietFood { Diet = meat, DietId = meat.Id },
-                        },
+                        Diet = meat,
                         FoodLocation = new List<FoodLocation>
                         {
                             new FoodLocation{ Location = theDryReef, LocationId = theDryReef.Id, },
@@ -260,10 +221,7 @@ namespace SlimeRancherWikiAPI.Data
                     {
                         Name = "Кур-курочка",
                         ImgUrl = "diets/meats/Hen_Hen.webp",
-                        DietFood = new List<DietFood>
-                        {
-                            new DietFood { Diet = meat, DietId = meat.Id },
-                        },
+                        Diet = meat,
                         FoodLocation = new List<FoodLocation>
                         {
                             new FoodLocation{ Location = theDryReef, LocationId = theDryReef.Id, },
@@ -279,10 +237,7 @@ namespace SlimeRancherWikiAPI.Data
                     {
                         Name = "Півень",
                         ImgUrl = "diets/meats/Roostro.webp",
-                        DietFood = new List<DietFood>
-                        {
-                            new DietFood { Diet = meat, DietId = meat.Id },
-                        },
+                        Diet = meat,
                         FoodLocation = new List<FoodLocation>
                         {
                             new FoodLocation{ Location = theDryReef, LocationId = theDryReef.Id, },
@@ -298,10 +253,7 @@ namespace SlimeRancherWikiAPI.Data
                     {
                         Name = "Кам'янисте курчатко",
                         ImgUrl = "diets/meats/Stony_Chickadoo.webp",
-                        DietFood = new List<DietFood>
-                        {
-                            new DietFood { Diet = meat, DietId = meat.Id },
-                        },
+                        Diet = meat,
                         FoodLocation = new List<FoodLocation>
                         {
                             new FoodLocation{ Location = theDryReef, LocationId = theDryReef.Id, },
@@ -317,10 +269,7 @@ namespace SlimeRancherWikiAPI.Data
                     {
                         Name = "Кам'яниста курочка",
                         ImgUrl = "diets/meats/Stony_Hen.webp",
-                        DietFood = new List<DietFood>
-                        {
-                            new DietFood { Diet = meat, DietId = meat.Id },
-                        },
+                        Diet = meat,
                         FoodLocation = new List<FoodLocation>
                         {
                             new FoodLocation{ Location = theDryReef, LocationId = theDryReef.Id, },
@@ -336,10 +285,7 @@ namespace SlimeRancherWikiAPI.Data
                     {
                         Name = "Чагарникове курчатко",
                         ImgUrl = "diets/meats/Briar_Chickadoo.webp",
-                        DietFood = new List<DietFood>
-                        {
-                            new DietFood { Diet = meat, DietId = meat.Id },
-                        },
+                        Diet = meat,
                         FoodLocation = new List<FoodLocation>
                         {
                             new FoodLocation{ Location = theMossBlanket, LocationId = theMossBlanket.Id, },
@@ -350,10 +296,7 @@ namespace SlimeRancherWikiAPI.Data
                     {
                         Name = "Чагарникова курочка",
                         ImgUrl = "diets/meats/Briar_Hen.webp",
-                        DietFood = new List<DietFood>
-                        {
-                            new DietFood { Diet = meat, DietId = meat.Id },
-                        },
+                        Diet = meat,
                         FoodLocation = new List<FoodLocation>
                         {
                             new FoodLocation{ Location = theMossBlanket, LocationId = theMossBlanket.Id, },
@@ -364,10 +307,7 @@ namespace SlimeRancherWikiAPI.Data
                     {
                         Name = "Фарбоване курчатко",
                         ImgUrl = "diets/meats/Painted_Chickadoo.webp",
-                        DietFood = new List<DietFood>
-                        {
-                            new DietFood { Diet = meat, DietId = meat.Id },
-                        },
+                        Diet = meat,
                         FoodLocation = new List<FoodLocation>
                         {
                             new FoodLocation{ Location = theGlassDesert, LocationId = theGlassDesert.Id, },
@@ -378,10 +318,7 @@ namespace SlimeRancherWikiAPI.Data
                     {
                         Name = "Фарбована курочка",
                         ImgUrl = "diets/meats/Painted_Hen.webp",
-                        DietFood = new List<DietFood>
-                        {
-                            new DietFood { Diet = meat, DietId = meat.Id },
-                        },
+                        Diet = meat,
                         FoodLocation = new List<FoodLocation>
                         {
                             new FoodLocation{ Location = theGlassDesert, LocationId = theGlassDesert.Id, },
@@ -392,10 +329,7 @@ namespace SlimeRancherWikiAPI.Data
                     {
                         Name = "Старенька курочка",
                         ImgUrl = "diets/meats/Elder_Hen.webp",
-                        DietFood = new List<DietFood>
-                        {
-                            new DietFood { Diet = meat, DietId = meat.Id },
-                        },
+                        Diet = meat,
                         FoodLocation = new List<FoodLocation>
                         {
                             new FoodLocation{ Location = theDryReef, LocationId = theDryReef.Id, },
@@ -411,10 +345,7 @@ namespace SlimeRancherWikiAPI.Data
                     {
                         Name = "Старенький півень",
                         ImgUrl = "diets/meats/Elder_Roostro.webp",
-                        DietFood = new List<DietFood>
-                        {
-                            new DietFood { Diet = meat, DietId = meat.Id },
-                        },
+                        Diet = meat,
                         FoodLocation = new List<FoodLocation>
                         {
                             new FoodLocation{ Location = theDryReef, LocationId = theDryReef.Id, },
@@ -451,10 +382,7 @@ namespace SlimeRancherWikiAPI.Data
                             AvgPrice = 15,
                             MaxPrice = 27
                         },
-                        SlimeDiet = new List<SlimeDiet>
-                        {
-                            new SlimeDiet  { Diet = omnivorous, DietId = omnivorous.Id, }
-                        },
+                        Diet = omnivorous,
                         SlimeLocation = new List<SlimeLocation>
                         {
                             new SlimeLocation { Location = theDryReef, LocationId = theDryReef.Id, },
@@ -485,10 +413,7 @@ namespace SlimeRancherWikiAPI.Data
                             AvgPrice = 28,
                             MaxPrice = 48
                         },
-                        SlimeDiet = new List<SlimeDiet>
-                        {
-                            new SlimeDiet  { Diet = veggie, DietId = veggie.Id, }
-                        },
+                        Diet = veggie,
                         SlimeLocation = new List<SlimeLocation>
                         {
                             new SlimeLocation { Location = theDryReef, LocationId = theDryReef.Id, },
@@ -518,10 +443,7 @@ namespace SlimeRancherWikiAPI.Data
                             AvgPrice = 29,
                             MaxPrice = 49
                         },
-                        SlimeDiet = new List<SlimeDiet>
-                        {
-                            new SlimeDiet  { Diet = meat, DietId = meat.Id, }
-                        },
+                        Diet = meat,
                         SlimeLocation = new List<SlimeLocation>
                         {
                             new SlimeLocation { Location = theDryReef, LocationId = theDryReef.Id, },
@@ -551,10 +473,7 @@ namespace SlimeRancherWikiAPI.Data
                             AvgPrice = 28,
                             MaxPrice = 46
                         },
-                        SlimeDiet = new List<SlimeDiet>
-                        {
-                            new SlimeDiet  { Diet = fruit, DietId = fruit.Id, }
-                        },
+                        Diet = fruit,
                         SlimeLocation = new List<SlimeLocation>
                         {
                             new SlimeLocation { Location = theDryReef, LocationId = theDryReef.Id, },
@@ -585,10 +504,7 @@ namespace SlimeRancherWikiAPI.Data
                             AvgPrice = 55,
                             MaxPrice = 97
                         },
-                        SlimeDiet = new List<SlimeDiet>
-                        {
-                            new SlimeDiet  { Diet = veggie, DietId = veggie.Id, }
-                        },
+                        Diet = veggie,
                         SlimeLocation = new List<SlimeLocation>
                         {
                             new SlimeLocation { Location = theIndigoQuarry, LocationId = theIndigoQuarry.Id, },
@@ -615,10 +531,7 @@ namespace SlimeRancherWikiAPI.Data
                             AvgPrice = 54,
                             MaxPrice = 89
                         },
-                        SlimeDiet = new List<SlimeDiet>
-                        {
-                            new SlimeDiet  { Diet = meat, DietId = meat.Id, }
-                        },
+                        Diet = meat,
                         SlimeLocation = new List<SlimeLocation>
                         {
                             new SlimeLocation { Location = theMossBlanket, LocationId = theMossBlanket.Id, },
@@ -647,10 +560,7 @@ namespace SlimeRancherWikiAPI.Data
                             AvgPrice = 53,
                             MaxPrice = 88
                         },
-                        SlimeDiet = new List<SlimeDiet>
-                        {
-                            new SlimeDiet  { Diet = fruit, DietId = fruit.Id, }
-                        },
+                        Diet = fruit,
                         SlimeLocation = new List<SlimeLocation>
                         {
                             new SlimeLocation { Location = theMossBlanket, LocationId = theMossBlanket.Id, },
@@ -676,7 +586,7 @@ namespace SlimeRancherWikiAPI.Data
                             AvgPrice = 56,
                             MaxPrice = 92
                         },
-                        SlimeDiet = null,
+                        Diet = null,
                         SlimeLocation = new List<SlimeLocation>
                         {
                             new SlimeLocation { Location = theDryReef, LocationId = theDryReef.Id, },
@@ -706,10 +616,7 @@ namespace SlimeRancherWikiAPI.Data
                             AvgPrice = 75,
                             MaxPrice = 125
                         },
-                        SlimeDiet = new List<SlimeDiet>
-                        {
-                            new SlimeDiet  { Diet = veggie, DietId = veggie.Id, }
-                        },
+                        Diet = veggie,
                         SlimeLocation = new List<SlimeLocation>
                         {
                             new SlimeLocation { Location = theIndigoQuarry, LocationId = theIndigoQuarry.Id, },
@@ -735,10 +642,7 @@ namespace SlimeRancherWikiAPI.Data
                             AvgPrice = 73,
                             MaxPrice = 127
                         },
-                        SlimeDiet = new List<SlimeDiet>
-                        {
-                            new SlimeDiet  { Diet = meat, DietId = meat.Id, }
-                        },
+                        Diet = meat,
                         SlimeLocation = new List<SlimeLocation>
                         {
                             new SlimeLocation { Location = theMossBlanket, LocationId = theMossBlanket.Id, },
@@ -766,10 +670,7 @@ namespace SlimeRancherWikiAPI.Data
                             AvgPrice = 73,
                             MaxPrice = 124
                         },
-                        SlimeDiet = new List<SlimeDiet>
-                        {
-                            new SlimeDiet  { Diet = fruit, DietId = fruit.Id, }
-                        },
+                        Diet = fruit,
                         SlimeLocation = new List<SlimeLocation>
                         {
                             new SlimeLocation { Location = theAncientRuins, LocationId = theAncientRuins.Id, },
@@ -796,7 +697,7 @@ namespace SlimeRancherWikiAPI.Data
                             AvgPrice = 60,
                             MaxPrice = 92
                         },
-                        SlimeDiet = null,
+                        Diet = null,
                         SlimeLocation = new List<SlimeLocation>
                         {
                             new SlimeLocation { Location = theGlassDesert, LocationId = theGlassDesert.Id, },
@@ -822,10 +723,7 @@ namespace SlimeRancherWikiAPI.Data
                             AvgPrice = 96,
                             MaxPrice = 159
                         },
-                        SlimeDiet = new List<SlimeDiet>
-                        {
-                            new SlimeDiet  { Diet = fruit, DietId = fruit.Id, }
-                        },
+                        Diet = fruit,
                         SlimeLocation = new List<SlimeLocation>
                         {
                             new SlimeLocation { Location = theGlassDesert, LocationId = theGlassDesert.Id, },
@@ -851,10 +749,7 @@ namespace SlimeRancherWikiAPI.Data
                             AvgPrice = 94,
                             MaxPrice = 155
                         },
-                        SlimeDiet = new List<SlimeDiet>
-                        {
-                            new SlimeDiet  { Diet = meat, DietId = meat.Id, }
-                        },
+                        Diet = meat,
                         SlimeLocation = new List<SlimeLocation>
                         {
                             new SlimeLocation { Location = theGlassDesert, LocationId = theGlassDesert.Id, },
@@ -880,10 +775,7 @@ namespace SlimeRancherWikiAPI.Data
                             AvgPrice = 100,
                             MaxPrice = 170
                         },
-                        SlimeDiet = new List<SlimeDiet>
-                        {
-                            new SlimeDiet  { Diet = veggie, DietId = veggie.Id, }
-                        },
+                        Diet = veggie,
                         SlimeLocation = new List<SlimeLocation>
                         {
                             new SlimeLocation { Location = theGlassDesert, LocationId = theGlassDesert.Id, },
@@ -909,10 +801,7 @@ namespace SlimeRancherWikiAPI.Data
                             AvgPrice = 78,
                             MaxPrice = 134
                         },
-                        SlimeDiet = new List<SlimeDiet>
-                        {
-                            new SlimeDiet  { Diet = meat, DietId = meat.Id, }
-                        },
+                        Diet = meat,
                         SlimeLocation = new List<SlimeLocation>
                         {
                             new SlimeLocation { Location = theWilds, LocationId = theWilds.Id, },
@@ -933,7 +822,7 @@ namespace SlimeRancherWikiAPI.Data
                             AvgPrice = 0,
                             MaxPrice = 0
                         },
-                        SlimeDiet = null,
+                        Diet = null,
                         SlimeLocation = new List<SlimeLocation>
                         {
                             new SlimeLocation { Location = nimbleValley, LocationId = nimbleValley.Id, },
@@ -947,7 +836,7 @@ namespace SlimeRancherWikiAPI.Data
                         FavFood = null,
                         Toy = null,
                         Plort = null,
-                        SlimeDiet = null,
+                        Diet = null,
                         SlimeLocation = new List<SlimeLocation>
                         {
                             new SlimeLocation { Location = theSlimeulation, LocationId = theSlimeulation.Id, },
@@ -968,7 +857,7 @@ namespace SlimeRancherWikiAPI.Data
                             AvgPrice = 381,
                             MaxPrice = 661
                         },
-                        SlimeDiet = null,
+                        Diet = null,
                         SlimeLocation = new List<SlimeLocation>
                         {
                             new SlimeLocation { Location = theDryReef, LocationId = theDryReef.Id, },
@@ -986,10 +875,7 @@ namespace SlimeRancherWikiAPI.Data
                         FavFood = null,
                         Toy = null,
                         Plort = null,
-                        SlimeDiet = new List<SlimeDiet>
-                        {
-                            new SlimeDiet  { Diet = meat, DietId = meat.Id, }
-                        },
+                        Diet = meat,
                         SlimeLocation = new List<SlimeLocation>
                         {
                             new SlimeLocation { Location = theDryReef, LocationId = theDryReef.Id, },
@@ -1001,7 +887,7 @@ namespace SlimeRancherWikiAPI.Data
                     };
 
                     await context.AddRangeAsync(pinkSlime, rockSlime, tabbySlime, phosphorSlime, radSlime, boomSlime,
-                        honeySlime, puddleSlime, crystalSlime, hunterSlime, quantumSlime, fireSlime, dervishSlime, 
+                        honeySlime, puddleSlime, crystalSlime, hunterSlime, quantumSlime, fireSlime, dervishSlime,
                         tangleSlime, mosaicSlime, saberSlime, quicksilverSlime, glitchSlime, goldSlime, luckySlime);
 
                     await context.SaveChangesAsync();

@@ -6,11 +6,10 @@ namespace SlimeRancherWikiAPI.Models
     public class Diet
     {
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public string Id { get; set; }
+        public int Id { get; set; }
         public string Name { get; set; }
         public string ImgUrl { get; set; }
-        public ICollection<SlimeDiet> SlimeDiet { get; set; }
-        public ICollection<DietFood> DietFood { get; set; }
+        public ICollection<Slime> Slimes { get; set; }
+        public ICollection<Food> Foods { get; set; }
     }
 }

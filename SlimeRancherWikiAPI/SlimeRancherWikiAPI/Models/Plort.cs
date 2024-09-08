@@ -6,8 +6,7 @@ namespace SlimeRancherWikiAPI.Models
     public class Plort
     {
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public string Id { get; set; }
+        public int Id { get; set; }
         public string Name { get; set; }
         public string ImgUrl { get; set; }
         public int MinPrice { get; set; }
