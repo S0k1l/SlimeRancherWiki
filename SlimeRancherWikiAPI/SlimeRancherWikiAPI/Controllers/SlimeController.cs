@@ -37,7 +37,7 @@ namespace SlimeRancherWikiAPI.Controllers
         {
             if(!ModelState.IsValid) { return BadRequest(); }
 
-            if(id < 0) { return BadRequest("Invalid ID"); }
+            if(id <= 0) { return BadRequest("Invalid ID"); }
 
             var slime = await _slimeRepository.GetSlimeAsync(id);
 

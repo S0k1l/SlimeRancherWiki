@@ -22,6 +22,9 @@ namespace SlimeRancherWikiAPI.Controllers
         public async Task<IActionResult> Get()
         {
             var toys = await _toyRepository.GetAllToysAsync();
+
+            if(toys == null) return NotFound();
+
             var toysDto = toys.Select(t => new ItemDto
             {
                 Id = t.Id,
@@ -41,6 +44,8 @@ namespace SlimeRancherWikiAPI.Controllers
             if(id <= 0) return BadRequest("Invalid Id");
 
             var toy = await _toyRepository.GetToyAsync(id);
+
+            if(toy == null) return NotFound();
 
             var toyDto = new ToyDto
             {
