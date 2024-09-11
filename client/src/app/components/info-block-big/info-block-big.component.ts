@@ -2,12 +2,8 @@ import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { RouterLink } from '@angular/router';
+import { Item } from '../../interfaces/item';
 
-interface Item {
-  id: string,
-  name: string,
-  imgUrl: string,
-}
 
 @Component({
   selector: 'app-info-block-big',
@@ -18,7 +14,7 @@ interface Item {
 })
 export class InfoBlockBigComponent {
   @Input() header!:string;
-  @Input() array!:Item[];
+  @Input() array!:Item[] | null;
   @Input() path!:string | any[] | null | undefined;
 
 }

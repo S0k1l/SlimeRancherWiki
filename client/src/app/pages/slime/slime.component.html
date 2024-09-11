@@ -1,79 +1,3 @@
-<!-- <div class="flex h-full justify-center items-center">
-    <div class="h-full bg-aero-blue-t-90 w-11/12 max-w-7xl min-w-750px flex  items-center flex-col py-14">
-      <div class="inline-flex h-10 rounded-md items-center translate-y-5 px-8 -skew-x-12 bg-persian-orange">
-        <span class="skew-x-12 text-white text-xl font-semibold">{{slime.name.toUpperCase()}}</span>
-      </div>
-      <div class="bg-bone min-w-700px px-5 py-11 rounded-50px w-3/4 flex flex-row">
-        <div class="w-2/3 px-5 py-10">
-          <span>Lorem ipsum dolor sit amet consectetur, adipisicing elit. In, sunt doloremque possimus adipisci atque, voluptas vero excepturi eius quam non, minus accusamus reiciendis? Veritatis architecto repellat vero quas dolor eaque exercitationem pariatur ipsam rerum incidunt impedit hic, odit magni delectus fugit tempora harum quidem sunt ab voluptatum ipsa sapiente natus eligendi consectetur? Aspernatur atque autem amet modi, alias sed molestias earum distinctio, consectetur voluptate ratione natus repellat eaque provident labore, incidunt eveniet voluptates omnis recusandae deleniti vero facilis! Ipsa nisi laudantium accusamus nihil odio dolores esse possimus quasi, itaque facere porro expedita. Eaque accusantium voluptatem nihil! A modi expedita soluta.</span>
-        </div>
-        <div class="w-1/3 flex flex-col gap-3 p-3 min-w-72">
-          <div class="bg-fawn rounded-3xl flex justify-center items-center">
-            <img src="{{slime.imgUrl}}" alt="">
-          </div>
-          <div class="flex flex-row gap-3">
-            <div class="flex flex-col w-1/2 items-center justify-start rounded-3xl border-dashed border-2 border-slate-600 p-3 gap-3">
-              <div class="w-full bg-persian-orange h-8 rounded-lg items-center flex text-center">
-                <span class="text-white w-full font-semibold">Дієта</span>
-              </div>
-              @if (slime.diet.imgUrl) {
-                <img [routerLink]="['diets']" matTooltip="{{slime.diet.name}}" src="{{slime.diet.imgUrl}}" alt="">
-              }
-              @else {
-                <span>Немає</span>
-              }
-            </div>
-            <div class="flex flex-col w-1/2 items-center justify-start rounded-3xl border-dashed border-2 border-slate-600 p-3 gap-3">
-              <div class="w-full bg-persian-orange h-8 rounded-lg items-center flex text-center">
-                <span class="text-white w-full font-semibold">Юлюблене</span>
-              </div>
-              @if (slime.favFood?.imgUrl) {
-                <img [routerLink]="['food', slime.favFood?.id]" matTooltip="{{slime.favFood?.name}}" src="{{slime.favFood?.imgUrl}}" alt="">
-              }
-              @else {
-                <span class="h-1/2 flex items-center font-semibold text-lg text-slate-700">Немає</span>
-              }
-            </div>
-          </div>
-          <div class="flex flex-row gap-3">
-            <div class="flex flex-col w-1/2 items-center justify-start rounded-3xl border-dashed border-2 border-slate-600 p-3 gap-3">
-              <div class="w-full bg-persian-orange h-8 rounded-lg items-center flex text-center">
-                <span class="text-white w-full font-semibold">Іграшка</span>
-              </div>
-              @if (slime.toys?.imgUrl) {
-                <img [routerLink]="['toy', slime.toys?.id]" matTooltip="{{slime.toys?.name}}" src="{{slime.toys?.imgUrl}}" alt="">
-              }
-              @else {
-                <span>Немає</span>
-              }
-            </div>
-            <div class="flex flex-col w-1/2 items-center justify-start rounded-3xl border-dashed border-2 border-slate-600 p-3 gap-3">
-              <div class="w-full bg-persian-orange h-8 rounded-lg items-center flex text-center">
-                <span class="text-white w-full font-semibold">Плорт</span>
-              </div>
-              @if (slime.plort?.imgUrl) {
-                <img [routerLink]="['plort', slime.plort?.id]" matTooltip="{{slime.plort?.name}}" src="{{slime.plort?.imgUrl}}" alt="">
-              }
-              @else {
-                <span class="h-1/2 flex items-center font-semibold text-lg text-slate-700">Немає</span>
-              }
-            </div>
-          </div>
-          <div class="flex flex-col rounded-3xl border-dashed border-2 border-slate-600 p-3 gap-3">
-            <div class=" bg-persian-orange h-8 rounded-lg items-center flex text-center">
-              <span class="text-white w-full font-semibold">Локації</span>
-            </div>
-            <div class="flex flex-row flex-wrap justify-center items-start gap-1">
-              <img *ngFor="let item of slime.locations" 
-              [routerLink]="['location', item.id]" matTooltip="{{item.name}}"
-               width="50" height="50" src="{{item.imgUrl}}" alt="">
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div> -->
-
   <div class="flex h-screen min-h-750px justify-center items-center">
     <div class="h-full bg-aero-blue-t-90 w-11/12 max-w-7xl min-w-750px flex  items-center flex-col py-16">
       <div class="inline-flex h-10 rounded-md items-center translate-y-5 px-8 -skew-x-12 bg-persian-orange">
@@ -88,92 +12,17 @@
 
           <div class="grid grid-cols-4 gap-3 w-2/3 min-w-510px">
             <app-info-block header="Дієта" imgUrl="{{slime.diet?.imgUrl}}" name="{{slime.diet?.name}}" [link]="['/diets']"></app-info-block>
-            
-            <!-- <div class="flex flex-col items-center justify-start rounded-3xl border-dashed border-2 border-slate-600 p-3 gap-3">
-              <div class="w-full bg-persian-orange h-8 rounded-lg items-center flex text-center">
-                <span class="text-white w-full font-semibold">Дієта</span>
-              </div>
-              @if (slime.diet?.imgUrl) {
-                <div class="h-full flex items-center">
-                  <img [routerLink]="['diets']" matTooltip="{{slime.diet?.name}}" src="{{slime.diet?.imgUrl}}" alt="">
-                </div>
-              }
-              @else {
-                <div class="h-full flex items-center">
-                  <span class="h-1/2 flex items-center font-semibold text-lg text-slate-700">Немає</span>
-                </div>
-              }
-            </div> -->
-            
+                        
             <app-info-block header="Юлюблене" imgUrl="{{slime.favFood?.imgUrl}}" name="{{slime.favFood?.name}}" 
             [link]="[slime.diet?.name == 'Фрукти' ? '/fruit' : 
             (slime.diet?.name == 'Овочі' ? '/veggie' : 
             (slime.diet?.name == 'М\'ясо' ? '/meat' : '/')), slime.favFood?.id]"></app-info-block>
-
-            <!-- <div class="flex flex-col items-center justify-start rounded-3xl border-dashed border-2 border-slate-600 p-3 gap-3">
-              <div class="w-full bg-persian-orange h-8 rounded-lg items-center flex text-center">
-                <span class="text-white w-full font-semibold">Юлюблене</span>
-              </div>
-              @if (slime.favFood?.imgUrl) {
-                <div class="h-full flex items-center">
-                  <img [routerLink]="['food', slime.favFood?.id]" matTooltip="{{slime.favFood?.name}}" src="{{slime.favFood?.imgUrl}}" alt="">
-                </div>
-              }
-              @else {
-                <div class="h-full flex items-center">
-                  <span class="h-1/2 flex items-center font-semibold text-lg text-slate-700">Немає</span>
-                </div>
-              }
-            </div> -->
            
-            <app-info-block header="Іграшка" imgUrl="{{slime.toys?.imgUrl}}" name="{{slime.toys?.name}}" [link]="['/toys']" [fragment]="slime.toys?.id"></app-info-block>
-
-            <!-- <div class="flex flex-col items-center justify-start rounded-3xl border-dashed border-2 border-slate-600 p-3 gap-3">
-              <div class="w-full bg-persian-orange h-8 rounded-lg items-center flex text-center">
-                <span class="text-white w-full font-semibold">Іграшка</span>
-              </div>
-              @if (slime.toys?.imgUrl) {
-                <div class="h-full flex items-center">
-                  <img [routerLink]="['toy', slime.toys?.id]" matTooltip="{{slime.toys?.name}}" src="{{slime.toys?.imgUrl}}" alt="">
-                </div>
-              }
-              @else {
-                <div class="h-full flex items-center">
-                  <span class="h-1/2 flex items-center font-semibold text-lg text-slate-700">Немає</span>
-                </div>
-              }
-            </div> -->
+            <app-info-block header="Іграшка" imgUrl="{{slime.toy?.imgUrl}}" name="{{slime.toy?.name}}" [link]="['/toys']" [fragment]="slime.toy?.id"></app-info-block>
             
             <app-info-block header="Плорт" imgUrl="{{slime.plort?.imgUrl}}" name="{{slime.plort?.name}}" [link]="['/plorts']" [fragment]="slime.plort?.id"></app-info-block>
-
-            <!-- <div class="flex flex-col items-center justify-start rounded-3xl border-dashed border-2 border-slate-600 p-3 gap-3">
-              <div class="w-full bg-persian-orange h-8 rounded-lg items-center flex text-center">
-                <span class="text-white w-full font-semibold">Плорт</span>
-              </div>
-              @if (slime.plort?.imgUrl) {
-                <div class="h-full flex items-center">
-                  <img [routerLink]="['plort', slime.plort?.id]" matTooltip="{{slime.plort?.name}}" src="{{slime.plort?.imgUrl}}" alt="">
-                </div>
-              }
-              @else {
-                <div class="h-full flex items-center">
-                  <span class="h-1/2 flex items-center font-semibold text-lg text-slate-700">Немає</span>
-                </div>
-              }
-            </div> -->
             
             <app-info-block-big class="col-span-4" header="Локації" [array]="slime.locations" path="{{'/location'}}"></app-info-block-big>
-
-            <!-- <div class="col-span-4 flex flex-col rounded-3xl border-dashed border-2 border-slate-600 p-3 gap-3">
-              <div class="bg-persian-orange h-8 rounded-lg items-center flex text-center">
-                <span class="text-white w-full font-semibold">Локації</span>
-              </div>
-              <div class="flex flex-row flex-wrap justify-center items-start gap-1">
-                <img *ngFor="let item of slime.locations" 
-                [routerLink]="['location', item.id]" matTooltip="{{item.name}}"
-                width="50" height="50" src="{{item.imgUrl}}" alt="">
-              </div>
-            </div> -->
           </div>
 
       </div>

@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { Item } from '../../interfaces/item';
 
 interface Items {
   id: string,
@@ -15,7 +16,7 @@ interface Items {
   styleUrl: './item-button.component.css'
 })
 export class ItemButtonComponent {
-  @Input() item!: Items;
+  @Input() item!: Item;
   @Input() routePath!: string | any[] | null | undefined;
   @Input() fragment!:string | undefined;
 }

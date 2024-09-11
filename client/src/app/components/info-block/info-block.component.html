@@ -4,7 +4,7 @@
     </div>
     @if (imgUrl) {
       <div class="h-3/4 flex items-center">
-        <button [routerLink]="link" class="rounded-3xl p-1" [fragment]="fragment" [matTooltip]="name">
+        <button [routerLink]="link" class="rounded-3xl p-1" fragment="{{fragment}}" [matTooltip]="name">
           <img [src]="imgUrl" alt="">
         </button>
       </div>

@@ -4,7 +4,7 @@
         <img class="w-12 h-12" src="slimes/Pink_Slime.webp" alt="404" draggable="false">
         <span class="w-full text-slate-800 font-medium">Слайми</span>
       </ng-template>
-        <app-item-button *ngFor="let item of slimes" [item]="item" [routePath]="['/slime',item.id]"></app-item-button>
+        <app-item-button *ngFor="let item of slimes | async" [item]="item" [routePath]="['/slime',item.id]"></app-item-button>
     </mat-tab>
   </mat-tab-group>
   

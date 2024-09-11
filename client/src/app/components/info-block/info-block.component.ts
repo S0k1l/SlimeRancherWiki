@@ -15,5 +15,5 @@ export class InfoBlockComponent {
  @Input() link!:string | any[] | null | undefined;
  @Input() name!:string;
  @Input() header!:string;
- @Input() fragment!:string | undefined;
+ @Input() fragment!:number | undefined;
 }

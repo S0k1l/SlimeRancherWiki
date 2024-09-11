@@ -1,57 +1,42 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { MatTooltipModule } from '@angular/material/tooltip';
-import { RouterLink } from '@angular/router';
+import { ActivatedRoute, RouterLink } from '@angular/router';
 import { InfoBlockComponent } from "../../components/info-block/info-block.component";
 import { InfoBlockBigComponent } from "../../components/info-block-big/info-block-big.component";
-
-interface Item {
-  id: string,
-  name: string,
-  imgUrl: string,
-}
-
-interface Diet {
-  name: string;
-  imgUrl: string;
-}
-
-interface Slime{
-  name: string;
-  imgUrl: string;
-  toys: Item | null;
-  locations: Item[];
-  diet: Diet | null;
-  favFood: Item | null;
-  plort: Item | null;
-}
+import { Slime } from '../../interfaces/slime';
+import { SlimeService } from '../../services/slime.service';
 
 @Component({
   selector: 'app-slime',
   standalone: true,
   imports: [RouterLink, CommonModule, MatTooltipModule, InfoBlockComponent, InfoBlockBigComponent],
   templateUrl: './slime.component.html',
-  styleUrl: './slime.component.css'
+  styleUrl: './slime.component.css',
 })
-export class SlimeComponent {
+export class SlimeComponent implements OnInit {
 
- slime: Slime = {
-   name: 'Рожевий слайм',
-   imgUrl: 'slimes/Pink_Slime.webp',
-   toys: {id: '1', name: 'Пляжний м\'яч', imgUrl: 'toys/Beach_Ball.webp'},
-   locations: [
-    {id: '2', name: 'Сухий Риф', imgUrl: 'locations/The_Dry_Reef.webp'},
-    {id: '3', name: 'Індиговий Кар\'єр', imgUrl: 'locations/Indigo_Quarry.webp'},
-    {id: '4', name: 'Моховий Покрив', imgUrl: 'locations/The_Moss_Blanket.webp'},
-    {id: '5', name: 'Стародавні Руїни', imgUrl: 'locations/The_Ancient_Ruins.webp'},
-    {id: '6', name: 'Скляна Пустеля', imgUrl: 'locations/The_Glass_Desert.webp'},
-    {id: '7', name: 'Дикі Землі', imgUrl: 'locations/The_Wilds.webp'},
-    {id: '8', name: 'Швидка Долина', imgUrl: 'locations/Nimble_Valley.webp'},
-    {id: '9', name: 'Слаймуляція', imgUrl: 'locations/Slimeulation.webp'},
-    {id: '10', name: 'Слаймове Море', imgUrl: 'locations/The_Slime_Sea.webp'},
-   ],
-   diet: {name : 'Всеїдний', imgUrl: 'diets/All.webp'},
-   favFood: {id: '1', name: 'Погофрукт', imgUrl: 'diets/fruits/Pogofruit.webp'},
-   plort: {id: '1', name: 'Рожевий плорт', imgUrl: 'plorts/PlortPINK.webp'},
- }
+  id!:number;
+  slimeService = inject(SlimeService);
+  slime!: Slime;
+
+  constructor(private route: ActivatedRoute) { }
+
+  ngOnInit(): void {
+    this.route.params.subscribe(params => {
+        this.id = +params['id'];
+        this.getSlime(this.id);
+      });
+  }
+
+  getSlime(id: number){
+    this.slimeService.getSlime(id).subscribe(
+      (response) => {
+        this.slime = response;
+      },
+      (error) => {
+        console.error('Error fetching data by ID:', error);
+      }
+    );
+  }
 }
