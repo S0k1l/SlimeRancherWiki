@@ -1,18 +1,26 @@
 <div class="flex h-screen min-h-750px justify-center items-center">
-    <div class="h-full bg-aero-blue-t-90 w-11/12 max-w-7xl min-w-750px flex  items-center flex-col py-16">
-        <div class="inline-flex h-10 rounded-md items-center translate-y-5 px-8 -skew-x-12 bg-persian-orange">
-            <span class="skew-x-12 text-white text-xl font-semibold">{{food.name.toUpperCase()}}</span>
+    <div class="h-full bg-aero-blue-t-90 w-11/12 max-w-7xl min-w-750px">
+        <div *ngIf="foodDetails | async as food" class="flex items-center flex-col py-16">
+            <div class="inline-flex h-10 rounded-md items-center translate-y-5 px-8 -skew-x-12 bg-persian-orange">
+                <span class="skew-x-12 text-white text-xl font-semibold">{{food.name.toUpperCase()}}</span>
+            </div>
+            <div class="bg-bone min-w-700px px-5 py-11 rounded-50px w-3/4 flex flex-row gap-3">
+    
+                <div class="bg-fawn rounded-3xl flex justify-center items-center w-1/3">
+                  <img matTooltip="{{food.name}}" src="{{food.imgUrl}}" alt="">
+                </div>
+      
+                <div class="grid grid-cols-3 gap-3 w-2/3 min-w-510px">
+                    <app-info-block header="Дієта" link="{{['/diets']}}" name="{{food.diet.name}}" imgUrl="{{food.diet.imgUrl}}"></app-info-block>
+                    <app-info-block header="Слайм" [link]="['/slime', food.slime?.id]" name="{{food.slime?.name}}" imgUrl="{{food.slime?.imgUrl}}"></app-info-block>
+                    @if (food.locations.length == 1) {
+                        <app-info-block header="Локації" [link]="['/location', food.locations[0].id]" name="{{food.locations[0].name}}" imgUrl="{{food.locations[0].imgUrl}}"></app-info-block>
+                    }
+                    @else {
+                        <app-info-block-big header="Локації" [array]="food.locations" path="/location"></app-info-block-big>
+                    }
+                </div>
+            </div>
         </div>
-        <div class="bg-bone min-w-700px px-5 py-11 rounded-50px w-3/4 flex flex-row gap-3">
-
-            <div class="bg-fawn rounded-3xl flex justify-center items-center w-1/3">
-              <img matTooltip="{{food.name}}" src="{{food.imgUrl}}" alt="">
-            </div>
-  
-            <div class="grid grid-cols-3 gap-3 w-2/3 min-w-510px">
-                <app-info-block header="Дієта" link="{{['/diets']}}" name="{{food.diet.name}}" imgUrl="{{food.diet.imgUrl}}"></app-info-block>
-                <app-info-block header="Слайм" [link]="['/slime', food.slime?.id]" name="{{food.slime?.name}}" imgUrl="{{food.slime?.imgUrl}}"></app-info-block>
-                <app-info-block-big header="Локації" [array]="food.Locations" path="/location"></app-info-block-big>
-            </div>
     </div>
 </div>

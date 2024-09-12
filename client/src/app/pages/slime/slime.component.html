@@ -15,8 +15,8 @@
                           
               <app-info-block header="Юлюблене" imgUrl="{{slime.favFood?.imgUrl}}" name="{{slime.favFood?.name}}" 
               [link]="[slime.diet?.name == 'Фрукти' ? '/fruit' : 
-              (slime.diet?.name == 'Овочі' ? '/veggie' : 
-              (slime.diet?.name == 'М\'ясо' ? '/meat' : '/')), slime.favFood?.id]"></app-info-block>
+              ((slime.diet?.name == 'Овочі' || slime.diet == null) ?  '/veggie' : 
+              (slime.diet.name == 'М\'ясо' ? '/meat' : '/')), slime.favFood?.id]"></app-info-block>
              
               <app-info-block header="Іграшка" imgUrl="{{slime.toy?.imgUrl}}" name="{{slime.toy?.name}}" [link]="['/toys']" [fragment]="slime.toy?.id"></app-info-block>
               
