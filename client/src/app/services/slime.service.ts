@@ -17,6 +17,6 @@ export class SlimeService {
   getSlimes = (): Observable<Item[]> => 
     this.http.get<Item[]>(`${this.apiUrl}Slime`);
 
-  getSlime = (id: number): Observable<Slime> =>
+  getSlime = (id: string): Observable<Slime> =>
     this.http.get<Slime>(`${this.apiUrl}Slime/${id}`);
 }

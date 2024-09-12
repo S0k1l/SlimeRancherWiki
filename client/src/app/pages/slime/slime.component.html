@@ -1,30 +1,31 @@
   <div class="flex h-screen min-h-750px justify-center items-center">
-    <div class="h-full bg-aero-blue-t-90 w-11/12 max-w-7xl min-w-750px flex  items-center flex-col py-16">
-      <div class="inline-flex h-10 rounded-md items-center translate-y-5 px-8 -skew-x-12 bg-persian-orange">
-        <span class="skew-x-12 text-white text-xl font-semibold">{{slime.name.toUpperCase()}}</span>
-      </div>
-
-      <div class="bg-bone min-w-700px px-5 py-11 rounded-50px w-3/4 flex flex-row gap-3">
-
-          <div class="bg-fawn rounded-3xl flex justify-center items-center w-1/3">
-            <img matTooltip="{{slime.name}}" src="{{slime.imgUrl}}" alt="">
-          </div>
-
-          <div class="grid grid-cols-4 gap-3 w-2/3 min-w-510px">
-            <app-info-block header="Дієта" imgUrl="{{slime.diet?.imgUrl}}" name="{{slime.diet?.name}}" [link]="['/diets']"></app-info-block>
-                        
-            <app-info-block header="Юлюблене" imgUrl="{{slime.favFood?.imgUrl}}" name="{{slime.favFood?.name}}" 
-            [link]="[slime.diet?.name == 'Фрукти' ? '/fruit' : 
-            (slime.diet?.name == 'Овочі' ? '/veggie' : 
-            (slime.diet?.name == 'М\'ясо' ? '/meat' : '/')), slime.favFood?.id]"></app-info-block>
-           
-            <app-info-block header="Іграшка" imgUrl="{{slime.toy?.imgUrl}}" name="{{slime.toy?.name}}" [link]="['/toys']" [fragment]="slime.toy?.id"></app-info-block>
-            
-            <app-info-block header="Плорт" imgUrl="{{slime.plort?.imgUrl}}" name="{{slime.plort?.name}}" [link]="['/plorts']" [fragment]="slime.plort?.id"></app-info-block>
-            
-            <app-info-block-big class="col-span-4" header="Локації" [array]="slime.locations" path="{{'/location'}}"></app-info-block-big>
-          </div>
-
+    <div class="h-full bg-aero-blue-t-90 w-11/12 max-w-7xl min-w-750px">
+      <div *ngIf="slimeDetails | async as slime" class="flex items-center flex-col py-16">
+        <div class="inline-flex h-10 rounded-md items-center translate-y-5 px-8 -skew-x-12 bg-persian-orange">
+          <span class="skew-x-12 text-white text-xl font-semibold">{{slime.name.toUpperCase()}}</span>
+        </div>
+  
+        <div class="bg-bone min-w-700px px-5 py-11 rounded-50px w-3/4 flex flex-row gap-3">
+            <div class="bg-fawn rounded-3xl flex justify-center items-center w-1/3">
+              <img matTooltip="{{slime.name}}" src="{{slime.imgUrl}}" alt="">
+            </div>
+  
+            <div class="grid grid-cols-4 gap-3 w-2/3 min-w-510px">
+              <app-info-block header="Дієта" imgUrl="{{slime.diet?.imgUrl}}" name="{{slime.diet?.name}}" [link]="['/diets']"></app-info-block>
+                          
+              <app-info-block header="Юлюблене" imgUrl="{{slime.favFood?.imgUrl}}" name="{{slime.favFood?.name}}" 
+              [link]="[slime.diet?.name == 'Фрукти' ? '/fruit' : 
+              (slime.diet?.name == 'Овочі' ? '/veggie' : 
+              (slime.diet?.name == 'М\'ясо' ? '/meat' : '/')), slime.favFood?.id]"></app-info-block>
+             
+              <app-info-block header="Іграшка" imgUrl="{{slime.toy?.imgUrl}}" name="{{slime.toy?.name}}" [link]="['/toys']" [fragment]="slime.toy?.id"></app-info-block>
+              
+              <app-info-block header="Плорт" imgUrl="{{slime.plort?.imgUrl}}" name="{{slime.plort?.name}}" [link]="['/plorts']" [fragment]="slime.plort?.id"></app-info-block>
+              
+              <app-info-block-big class="col-span-4" header="Локації" [array]="slime.locations" path="{{'/location'}}"></app-info-block-big>
+            </div>
+  
+        </div>
       </div>
     </div>
   </div>
