@@ -4,7 +4,7 @@
         <img class="w-12 h-12" src="locations/Far_Far_Range.webp" alt="404" draggable="false">
         <span class="w-full text-slate-800 font-medium">Світ</span>
       </ng-template>
-        <app-item-button *ngFor="let item of locations" [item]="item" [routePath]="['/location',item.id]"></app-item-button>
+        <app-item-button *ngFor="let item of locations | async" [item]="item" [routePath]="['/location',item.id]"></app-item-button>
     </mat-tab>
   </mat-tab-group>
   

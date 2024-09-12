@@ -80,7 +80,7 @@ namespace SlimeRancherWikiAPI.Controllers
             var slimes = location.SlimeLocation?.Select(fl => fl.Slime).ToList();
             List<ItemDto>? slimesDto = null;
 
-            if( slimes != null)
+            if(slimes.Any())
             {
                 slimesDto = slimes.Select(s => new ItemDto
                 {

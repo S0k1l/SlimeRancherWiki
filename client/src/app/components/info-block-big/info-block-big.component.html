@@ -3,8 +3,16 @@
       <span class="text-white w-full font-semibold">{{header}}</span>
     </div>
     <div class="flex flex-row flex-wrap justify-center items-start gap-1">
-      <button *ngFor="let item of array" class="rounded-xl p-1" matTooltip="{{item.name}}" [routerLink]="[path, item.id]">
-        <img width="50" height="50" src="{{item.imgUrl}}" alt="">
-      </button>
+      @if (array) {
+        <button *ngFor="let item of array" class="rounded-xl p-1" matTooltip="{{item.name}}" [routerLink]="[path, item.id]">
+          <img width="50" height="50" src="{{item.imgUrl}}" alt="">
+        </button>
+      }
+      @else {
+        <div class="h-3/4 flex items-center">
+          <span class="font-semibold text-lg text-slate-700">Немає</span>
+        </div>
+      }
+
     </div>
   </div>
