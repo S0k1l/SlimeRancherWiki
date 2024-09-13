@@ -1,23 +1,10 @@
-import { Component, ViewChild, OnInit, Renderer2 } from '@angular/core';
+import { Component, ViewChild, OnInit, Renderer2, AfterViewInit } from '@angular/core';
 import { MatSort, MatSortModule } from '@angular/material/sort';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 import { MatTooltipModule } from '@angular/material/tooltip';
-import { NavigationEnd, Router, RouterLink } from '@angular/router';
-interface Item {
-  id: string,
-  name: string,
-  imgUrl: string,
-}
-
-interface Plorts{
-  id: string;
-  name: string;
-  imgUrl: string;
-  minPrice: string;
-  maxPrice: string;
-  avgPrice: string;
-  slime: Item;
-}
+import { Router, RouterLink } from '@angular/router';
+import { PlortService } from '../../services/plort.service';
+import { Plort } from '../../interfaces/plort';
 
 @Component({
   selector: 'app-plorts',
@@ -26,56 +13,41 @@ interface Plorts{
   templateUrl: './plorts.component.html',
   styleUrl: './plorts.component.css'
 })
-export class PlortsComponent implements OnInit  {
 
-  constructor(private router: Router, private renderer: Renderer2) { }
+export class PlortsComponent implements OnInit, AfterViewInit {
+
+  id!: string;
+
+  plorts = new MatTableDataSource<Plort>([]);
+
+  constructor(private router: Router, private renderer: Renderer2, private plortService: PlortService) { }
 
   ngOnInit(): void {
-    this.router.events.subscribe(event => {
-      if (event instanceof NavigationEnd) {
-        const fragment = this.router.url.split('#')[1];
-        if (fragment) {
-          setTimeout(() => {
-            const el = document.getElementById(fragment);
-            this.renderer.addClass(el,'highlighted');
-            el?.scrollIntoView({ behavior: 'smooth', block: 'center', inline: 'center' });
-
-            setTimeout(() => {
-              this.renderer.removeClass(el,'highlighted');
-            }, 1000);
-          }, 100);
-        }
-      }
+    this.plortService.getPlortsDetalis().subscribe((res) => {
+      this.plorts.data = res;
     });
   }
-
+  
   displayedColumns: string[] = ['plort', 'slime', 'minPrice', 'maxPrice', 'avgPrice'];
-  plortsQ: Plorts[] = [
-    {id: '1', name: 'Рожевий плорт', imgUrl: 'plorts/PlortPINK.webp', minPrice: '300', maxPrice: '350', avgPrice: '325', slime: {id: '1', name: 'Рожевий слайм', imgUrl: 'slimes/Pink_Slime.webp'},},
-    {id: '2', name: 'Кам\'яний плорт', imgUrl: 'plorts/PlortROCK.webp', minPrice: '400', maxPrice: '450', avgPrice: '425', slime: {id: '2', name: 'Кам\'яний слайм', imgUrl: 'slimes/Rock_Slime.webp'},},
-    {id: '3', name: 'Смугастий плорт', imgUrl: 'plorts/PlortTABBY.webp', minPrice: '500', maxPrice: '550', avgPrice: '525', slime: {id: '3', name: 'Смугастий слайм', imgUrl: 'slimes/Tabby_Slime.webp'},},
-    {id: '4', name: 'Рожевий плорт', imgUrl: 'plorts/PlortPINK.webp', minPrice: '300', maxPrice: '350', avgPrice: '325', slime: {id: '1', name: 'Рожевий слайм', imgUrl: 'slimes/Pink_Slime.webp'},},
-    {id: '5', name: 'Кам\'яний плорт', imgUrl: 'plorts/PlortROCK.webp', minPrice: '400', maxPrice: '450', avgPrice: '425', slime: {id: '2', name: 'Кам\'яний слайм', imgUrl: 'slimes/Rock_Slime.webp'},},
-    {id: '6', name: 'Смугастий плорт', imgUrl: 'plorts/PlortTABBY.webp', minPrice: '500', maxPrice: '550', avgPrice: '525', slime: {id: '3', name: 'Смугастий слайм', imgUrl: 'slimes/Tabby_Slime.webp'},},
-    {id: '7', name: 'Рожевий плорт', imgUrl: 'plorts/PlortPINK.webp', minPrice: '300' ,maxPrice: '350', avgPrice: '325', slime: {id: '1', name: 'Рожевий слайм', imgUrl: 'slimes/Pink_Slime.webp'},},
-    {id: '8', name: 'Кам\'яний плорт', imgUrl: 'plorts/PlortROCK.webp', minPrice: '400', maxPrice: '450', avgPrice: '425', slime: {id: '2', name: 'Кам\'яний слайм', imgUrl: 'slimes/Rock_Slime.webp'},},
-    {id: '9', name: 'Смугастий плорт', imgUrl: 'plorts/PlortTABBY.webp', minPrice: '500', maxPrice: '550', avgPrice: '525', slime: {id: '3', name: 'Смугастий слайм', imgUrl: 'slimes/Tabby_Slime.webp'},},
-    {id: '10', name: 'Рожевий плорт', imgUrl: 'plorts/PlortPINK.webp', minPrice: '300' , maxPrice: '350', avgPrice: '325', slime: {id: '1', name: 'Рожевий слайм', imgUrl: 'slimes/Pink_Slime.webp'},},
-    {id: '11', name: 'Кам\'яний плорт', imgUrl: 'plorts/PlortROCK.webp', minPrice: '400', maxPrice: '450', avgPrice: '425', slime: {id: '2', name: 'Кам\'яний слайм', imgUrl: 'slimes/Rock_Slime.webp'},},
-    {id: '12', name: 'Смугастий плорт', imgUrl: 'plorts/PlortFIRE.webp', minPrice: '500', maxPrice: '550', avgPrice: '525', slime: {id: '3', name: 'Смугастий слайм', imgUrl: 'slimes/Tabby_Slime.webp'},},
-    {id: '13', name: 'Рожевий плорт', imgUrl: 'plorts/PlortPINK.webp', minPrice: '300' , maxPrice: '350', avgPrice: '325', slime: {id: '1', name: 'Рожевий слайм', imgUrl: 'slimes/Pink_Slime.webp'},},
-    {id: '14', name: 'Кам\'яний плорт', imgUrl: 'plorts/PlortROCK.webp', minPrice: '400', maxPrice: '450', avgPrice: '425', slime: {id: '2', name: 'Кам\'яний слайм', imgUrl: 'slimes/Rock_Slime.webp'},},
-    {id: '15', name: 'Смугастий плорт', imgUrl: 'plorts/PlortTABBY.webp', minPrice: '500', maxPrice: '550', avgPrice: '525', slime: {id: '3', name: 'Смугастий слайм', imgUrl: 'slimes/Tabby_Slime.webp'},},
-    {id: '16', name: 'Рожевий плорт', imgUrl: 'plorts/PlortPINK.webp', minPrice: '300' , maxPrice: '350', avgPrice: '325', slime: {id: '1', name: 'Рожевий слайм', imgUrl: 'slimes/Pink_Slime.webp'},},
-    {id: '17', name: 'Кам\'яний плорт', imgUrl: 'plorts/PlortROCK.webp', minPrice: '400', maxPrice: '450', avgPrice: '425', slime: {id: '2', name: 'Кам\'яний слайм', imgUrl: 'slimes/Rock_Slime.webp'},},
-    {id: '18', name: 'Смугастий плорт', imgUrl: 'plorts/PlortTABBY.webp', minPrice: '500', maxPrice: '550', avgPrice: '525', slime: {id: '3', name: 'Смугастий слайм', imgUrl: 'slimes/Tabby_Slime.webp'},},
-  ]
-
-  plorts = new MatTableDataSource(this.plortsQ);
 
   @ViewChild(MatSort) sort!: MatSort;
 
-  ngAfterViewInit() {
+  async ngAfterViewInit() {
+
+     this.id = this.router.url.split('#')[1];
+
+    setTimeout(() => {
+      const element = document.getElementById(this.id);
+      if (element) {
+        this.renderer.addClass(element, 'highlighted');
+        element.scrollIntoView({ behavior: 'smooth', block: 'center', inline: 'center' });
+
+        setTimeout(() => {
+          this.renderer.removeClass(element, 'highlighted');
+        }, 1000);
+      }
+    }, 300);
+
     this.plorts.sort = this.sort;
 
     this.plorts.sortingDataAccessor = (item, property) => {
