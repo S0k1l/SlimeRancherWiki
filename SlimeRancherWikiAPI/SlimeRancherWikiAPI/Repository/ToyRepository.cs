@@ -18,12 +18,11 @@ namespace SlimeRancherWikiAPI.Repository
             return await _context.Toys.ToListAsync();
         }
 
-        public async Task<Toy> GetToyAsync(int id)
+        public async Task<IEnumerable<Toy>> GetAllToysDetailsAsync()
         {
             return await _context.Toys
-                .Where(t => t.Id == id)
                 .Include(t => t.Slime)
-                .FirstOrDefaultAsync();
+                .ToListAsync();
         }
     }
 }

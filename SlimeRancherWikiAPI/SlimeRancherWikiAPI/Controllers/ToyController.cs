@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using SlimeRancherWikiAPI.Dto;
 using SlimeRancherWikiAPI.Interfaces;
+using SlimeRancherWikiAPI.Models;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -36,25 +37,22 @@ namespace SlimeRancherWikiAPI.Controllers
         }
 
         // GET api/<ToyController>/5
-        [HttpGet("{id}")]
-        public async Task<IActionResult> Get(int id)
+        [HttpGet("Details")]
+        public async Task<IActionResult> Details()
         {
-            if(!ModelState.IsValid) return BadRequest(ModelState);
-
-            if(id <= 0) return BadRequest("Invalid Id");
-
-            var toy = await _toyRepository.GetToyAsync(id);
+            var toy = await _toyRepository.GetAllToysDetailsAsync();
 
             if(toy == null) return NotFound();
 
-            var toyDto = new ToyDto
-            {
-                Id = toy.Id,
-                Name = toy.Name,
-                ImgUrl = toy.ImgUrl,
-                Price = toy.Price,
-                Slime = new ItemDto { Id = toy.Slime.Id, ImgUrl = toy.Slime.ImgUrl, Name = toy.Slime.Name },
-            };
+            var toyDto = toy.Select(t => new ToyDto
+                {
+                    Id = t.Id,
+                    Name = t.Name,
+                    ImgUrl = t.ImgUrl,
+                    Price = t.Price,
+                    Slime = new ItemDto { Id = t.Slime.Id, ImgUrl = t.Slime.ImgUrl, Name = t.Slime.Name },
+                })
+                .ToList();
 
             return Ok(toyDto);
         }
