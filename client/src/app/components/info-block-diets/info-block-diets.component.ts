@@ -2,18 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { RouterLink } from '@angular/router';
-
-interface Items {
-  id: string,
-  name: string,
-  imgUrl: string,
-}
-
-interface Diet {
-  name: string
-  imgUrl: string,
-  food: Items[],
-}
+import { Diet } from '../../interfaces/diet';
 
 @Component({
   selector: 'app-info-block-diets',

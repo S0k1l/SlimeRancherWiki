@@ -1,14 +1,17 @@
 <div class="flex h-screen min-h-1250px justify-center items-center">
-    <div class="h-full bg-aero-blue-t-90 w-11/12 max-w-7xl min-w-750px flex  items-center flex-col py-16">
-      <div class="inline-flex h-10 rounded-md items-center translate-y-5 px-8 -skew-x-12 bg-persian-orange">
-            <span class="skew-x-12 text-white text-xl font-semibold">ДІЄТИ</span>
-        </div>
-        <div class="bg-bone min-w-700px px-5 py-11 rounded-50px w-3/4 flex flex-col gap-3">
-
-            <app-info-block-diets [diet]="fruit" link="/fruit"></app-info-block-diets>
-            <app-info-block-diets [diet]="veggie" link="/veggie"></app-info-block-diets>
-            <app-info-block-diets [diet]="meat" link="/meat"></app-info-block-diets>
-
+    <div class="h-full bg-aero-blue-t-90 w-11/12 max-w-7xl min-w-750px">
+        <div *ngIf="dietsDetails | async as diets" class="flex items-center flex-col py-16">
+            <div class="inline-flex h-10 rounded-md items-center translate-y-5 px-8 -skew-x-12 bg-persian-orange">
+                <span class="skew-x-12 text-white text-xl font-semibold">ДІЄТИ</span>
+            </div>
+            <div class="bg-bone min-w-700px px-5 py-11 rounded-50px w-3/4 flex flex-col gap-3">
+    
+                <app-info-block-diets *ngFor="let item of diets" [diet]="item" link="{{item.name == 'Фрукти' ? '/fruit' : 
+                (item.name == 'Овочі' ?  '/veggie' : 
+                (item.name == 'М\'ясо' ? '/meat' : '/'))}}"></app-info-block-diets>
+   
+            </div>
         </div>
     </div>
 </div>
+
